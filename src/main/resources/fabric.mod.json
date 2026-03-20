@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "occidere",
+  "version": "${version}",
+  "name": "Occidere",
+  "description": "Tinkering, I think.",
+  "authors": [
+    "Chemthunder"
+  ],
+  "license": "CC0-1.0",
+  "icon": "assets/occidere/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.chemthunder.occidere.impl.Occidere"
+    ],
+    "client": [
+      "net.chemthunder.occidere.impl.client.OccidereClient"
+    ],
+    "fabric-datagen": [
+      "net.chemthunder.occidere.data.OccidereDataGen"
+    ],
+    "cardinal-components": [
+      "net.chemthunder.occidere.impl.cca.OccidereComponents"
+    ]
+  },
+  "mixins": [
+    "occidere.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "cardinal-components": [
+      "occidere:accursed"
+    ]
+  }
+}

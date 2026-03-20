@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "net.chemthunder.occidere.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LivingEntityMixin",
+    "PlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "client.BipedEntityModelMixin",
+    "client.TooltipBackgroundRendererMixin",
+    "client.item.ItemRendererAccessor",
+    "client.item.ItemRendererMixin",
+    "client.item.ModelLoaderMixin"
+  ]
+}
