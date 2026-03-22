@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.client.render.entity.WovenAdmirationModel;
+import net.chemthunder.occidere.impl.client.render.model.WovenAdmirationModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 

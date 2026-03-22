@@ -1,5 +1,8 @@
 package net.chemthunder.occidere.impl.entity;
 
+import net.chemthunder.lux.api.LuxFlashRenderer;
+import net.chemthunder.lux.impl.util.Easing;
+import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -13,6 +16,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class WovenAdmirationEntity extends Entity {
     public int ticksActive;
@@ -41,6 +46,14 @@ public class WovenAdmirationEntity extends Entity {
                     AccursedComponent component = AccursedComponent.KEY.get(player);
 
                     component.setActive(true);
+                }
+
+                List<LivingEntity> targets = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 50);
+
+                for (LivingEntity living : targets) {
+                    if (living instanceof PlayerEntity player) {
+                        LuxFlashRenderer.sendFlash(player, 0xffffff, Easing.linear);
+                    }
                 }
             }
 

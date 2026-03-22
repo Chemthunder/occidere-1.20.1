@@ -13,5 +13,7 @@ public class OccidereLangGen extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder translationBuilder) {
         OccidereItems.registerLang(translationBuilder);
         OccidereItemGroups.registerLang(translationBuilder);
+
+        translationBuilder.add(OccidereItems.FLAYED_LUST, "Flayed Lust");
     }
 }

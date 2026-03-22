@@ -1,11 +1,9 @@
-package net.chemthunder.occidere.impl.client.render.entity;
+package net.chemthunder.occidere.impl.client.render.model;
 
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.util.math.MatrixStack;
 

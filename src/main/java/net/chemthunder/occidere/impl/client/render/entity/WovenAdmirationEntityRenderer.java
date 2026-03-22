@@ -1,8 +1,8 @@
 package net.chemthunder.occidere.impl.client.render.entity;
 
 import net.chemthunder.occidere.impl.Occidere;
+import net.chemthunder.occidere.impl.client.render.model.WovenAdmirationModel;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
-import net.chemthunder.occidere.impl.index.OccidereEntityModelLayers;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
