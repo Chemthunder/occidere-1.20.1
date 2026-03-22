@@ -2,10 +2,7 @@ package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.api.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.item.AuratusItem;
-import net.chemthunder.occidere.impl.item.AurumItem;
-import net.chemthunder.occidere.impl.item.FateweaverItem;
-import net.chemthunder.occidere.impl.item.FlayedLustItem;
+import net.chemthunder.occidere.impl.item.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -18,12 +15,12 @@ import java.util.Map;
 public interface OccidereItems {
     Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
-    //Item SEVERED_SILENCE = create("severed_silence", new SeveredSilenceItem(SteelToolMaterials.DIVINE, 5, -2.6f, new Item.Settings().maxCount(1)));
-
     Item AURUM = create("aurum", new AurumItem(new Item.Settings()));
+    Item FLAYED_LUST = create("flayed_lust", new FlayedLustItem(new Item.Settings()));
+    Item NYRULNA_VAIN = create("nyrulna_vain", new NyrulnaVainItem(new Item.Settings()));
+
     Item FATEWEAVER = create("fateweaver", new FateweaverItem(new Item.Settings().maxCount(1)));
     Item AURATUS = create("auratus", new AuratusItem(new Item.Settings().maxCount(1)));
-    Item FLAYED_LUST = create("flayed_lust", new FlayedLustItem(new Item.Settings().maxCount(1)));
 
     static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, Occidere.id(name));

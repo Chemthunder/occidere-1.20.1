@@ -52,7 +52,5 @@ public class WeaponItem extends Item {
         return super.getName(stack).copy().styled(style -> style.withColor(getNameColor(stack)));
     }
 
-    public void customHitSound(PlayerEntity player, ItemStack stack) {}
-
     public void critEffect(PlayerEntity player, LivingEntity target, ItemStack stack, World world) {}
 }

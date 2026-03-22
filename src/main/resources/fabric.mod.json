@@ -35,7 +35,8 @@
   },
   "custom": {
     "cardinal-components": [
-      "occidere:accursed"
+      "occidere:accursed",
+      "occidere:vain"
     ]
   }
 }
