@@ -5,7 +5,6 @@ import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
 import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
-import net.minecraft.client.render.entity.TridentEntityRenderer;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class OccidereComponents implements EntityComponentInitializer {

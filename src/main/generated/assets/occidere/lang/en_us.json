@@ -4,5 +4,6 @@
   "item.occidere.fateweaver": "Fateweaver",
   "item.occidere.flayed_lust": "Flayed Lust",
   "item.occidere.nyrulna_vain": "Vain of Nyrulna",
-  "itemGroup.occidere": "Occidere"
+  "itemGroup.occidere": "Occidere",
+  "text.occidere.vain_ready": "Vain of Nyrulna has been charged!"
 }

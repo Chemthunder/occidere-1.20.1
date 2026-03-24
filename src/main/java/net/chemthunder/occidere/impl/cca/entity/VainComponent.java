@@ -30,7 +30,7 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
             if (player.isOnGround()) {
                 if (player.getMainHandStack().getItem() instanceof NyrulnaVainItem vainItem) {
                     this.isActive = false;
-                    vainItem.impact(player);
+                    vainItem.impact(player, player.getMainHandStack());
                     sync();
                 }
             }

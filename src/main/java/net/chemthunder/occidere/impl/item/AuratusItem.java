@@ -1,5 +1,6 @@
 package net.chemthunder.occidere.impl.item;
 
+import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.MiscItem;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
 import net.minecraft.entity.LivingEntity;
@@ -9,7 +10,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.GameMode;
 import net.minecraft.world.World;
 
@@ -22,8 +22,7 @@ public class AuratusItem extends MiscItem {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user.isSneaking()) {
-            Box area = new Box(user.getBlockPos()).expand(15);
-            List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, area, entity -> true);
+            List<LivingEntity> entities = ApiUtils.getEntitiesInBox(user.getBlockPos(), world, 10);
 
             for (LivingEntity entity : entities) {
                 if (entity instanceof ServerPlayerEntity serverPlayer) {

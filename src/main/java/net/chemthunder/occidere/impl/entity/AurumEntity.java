@@ -1,15 +1,14 @@
 package net.chemthunder.occidere.impl.entity;
 
 import net.chemthunder.occidere.api.ApiUtils;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Ownable;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.math.Box;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -20,11 +19,23 @@ public class AurumEntity extends ThrownEntity implements Ownable {
         super(entityType, world);
     }
 
-
     protected void initDataTracker() {}
 
     public void tick() {
         if (this.age >= this.maxAge) {
+            if (getWorld() instanceof ServerWorld serverWorld) {
+                serverWorld.spawnParticles(ParticleTypes.END_ROD,
+                        this.getX(),
+                        this.getY(),
+                        this.getZ(),
+                        4,
+                        0,
+                        0,
+                        0,
+                        0.1f
+                );
+            }
+
             this.discard();
         } else {
             List<LivingEntity> entities = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 10);

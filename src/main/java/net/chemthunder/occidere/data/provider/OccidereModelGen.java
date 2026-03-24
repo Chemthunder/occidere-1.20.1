@@ -1,7 +1,6 @@
 package net.chemthunder.occidere.data.provider;
 
-import net.chemthunder.occidere.api.HandheldItem;
-import net.chemthunder.occidere.impl.index.OccidereItemGroups;
+import net.chemthunder.occidere.api.interfaces.HandheldItem;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -26,5 +25,6 @@ public class OccidereModelGen extends FabricModelProvider {
         }
 
         itemModelGenerator.register(OccidereItems.AURATUS, Models.GENERATED);
+        itemModelGenerator.register(OccidereItems.AURATUS, "_second", Models.HANDHELD);
     }
 }

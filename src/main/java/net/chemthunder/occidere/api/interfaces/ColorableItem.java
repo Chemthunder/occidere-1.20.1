@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api;
+package net.chemthunder.occidere.api.interfaces;
 
 import net.minecraft.item.ItemStack;
 

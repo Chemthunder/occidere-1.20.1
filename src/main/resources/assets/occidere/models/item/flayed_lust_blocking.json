@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"1": "occidere:item/flayed_lust",
+		"particle": "occidere:item/flayed_lust",
+		"layer0": "occidere:item/flayed_lust_handheld"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [16, 0, 124],
+			"translation": [-6.25, 0, -1.25],
+			"scale": [1.47, 1.47, 1.47]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [16, 180, -124],
+			"translation": [-6.25, 0, -1.25],
+			"scale": [1.47, 1.47, 1.47]
+		},
+		"firstperson_righthand": {
+			"rotation": [15.42, -4.15, 100.31],
+			"translation": [-2.87, 3.45, 2.38],
+			"scale": [0.97, 0.97, 0.97]
+		},
+		"firstperson_lefthand": {
+			"rotation": [15.42, 180, -100.31],
+			"translation": [-2.87, 3.45, 2.38],
+			"scale": [0.97, 0.97, 0.97]
+		}
+	}
+}

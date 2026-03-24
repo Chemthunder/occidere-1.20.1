@@ -16,5 +16,7 @@ public class OccidereLangGen extends FabricLanguageProvider {
 
         translationBuilder.add(OccidereItems.FLAYED_LUST, "Flayed Lust");
         translationBuilder.add(OccidereItems.NYRULNA_VAIN, "Vain of Nyrulna");
+
+        translationBuilder.add("text.occidere.vain_ready", "Vain of Nyrulna has been charged!");
     }
 }

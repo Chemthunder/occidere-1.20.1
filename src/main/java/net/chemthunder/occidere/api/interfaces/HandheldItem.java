@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api;
+package net.chemthunder.occidere.api.interfaces;
 
 public interface HandheldItem {
     String getItemId();

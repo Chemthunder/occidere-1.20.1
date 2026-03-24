@@ -1,5 +1,6 @@
 package net.chemthunder.occidere.api;
 
+import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +13,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ApiUtils {
-
     public static List<LivingEntity> getEntitiesInBox(BlockPos pos, World world, int expansion) {
         Box area = new Box(pos).expand(expansion);
 
@@ -36,5 +36,9 @@ public class ApiUtils {
             float o = 1.1999999F;
             player.move(MovementType.SELF, new Vec3d(0.0F, 1.1999999F, 0.0F));
         }
+    }
+
+    public static boolean isGui(ModelTransformationMode modelTransformationMode) {
+        return  modelTransformationMode == ModelTransformationMode.GROUND || modelTransformationMode == ModelTransformationMode.GUI || modelTransformationMode == ModelTransformationMode.FIXED;
     }
 }

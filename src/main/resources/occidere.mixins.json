@@ -14,7 +14,8 @@
   },
   "client": [
     "client.BipedEntityModelMixin",
-    "client.TooltipBackgroundRendererMixin",
+    "client.PlayerEntityRendererMixin",
+    "client.TridentFeatureRendererMixin",
     "client.item.ItemRendererAccessor",
     "client.item.ItemRendererMixin",
     "client.item.ModelLoaderMixin"

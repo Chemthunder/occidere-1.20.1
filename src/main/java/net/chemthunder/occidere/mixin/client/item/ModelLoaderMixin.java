@@ -1,6 +1,7 @@
 package net.chemthunder.occidere.mixin.client.item;
 
-import net.chemthunder.occidere.api.HandheldItem;
+import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
+import net.chemthunder.occidere.api.interfaces.HandheldItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.client.color.block.BlockColors;
@@ -32,6 +33,12 @@ public abstract class ModelLoaderMixin {
         for (Item value : OccidereItems.ITEMS.keySet()) {
             if (value instanceof HandheldItem item) {
                 this.addModel(new ModelIdentifier(Occidere.MOD_ID, item.getItemId() + "_" + item.handheldId(), "inventory"));
+            }
+
+            if (value instanceof ComplexModelItem complexModelItem) {
+                for (var s : complexModelItem.getLoadedModels()) {
+                    this.addModel(new ModelIdentifier(Occidere.MOD_ID, s, "inventory"));
+                }
             }
         }
     }

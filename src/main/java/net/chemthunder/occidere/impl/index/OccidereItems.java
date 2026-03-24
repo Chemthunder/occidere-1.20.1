@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.impl.index;
 
-import net.chemthunder.occidere.api.IgnoredByRegisterLangItem;
+import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;

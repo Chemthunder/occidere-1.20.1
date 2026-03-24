@@ -1,21 +1,18 @@
 package net.chemthunder.occidere.mixin;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.chemthunder.occidere.api.WeaponItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
+import net.chemthunder.occidere.impl.index.OccidereItems;
+import net.chemthunder.occidere.impl.item.FlayedLustItem;
 import net.chemthunder.occidere.impl.item.NyrulnaVainItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -60,6 +57,26 @@ public abstract class PlayerEntityMixin extends LivingEntity {
             if (VainComponent.KEY.get(player).isActive()) {
                 if (source.isOf(DamageTypes.FALL)) {
                     cir.setReturnValue(true);
+                }
+            }
+        }
+    }
+
+    @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
+    private void occidere$blockHits(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        PlayerEntity player = (PlayerEntity) (Object) this;
+        Entity entity = source.getAttacker();
+
+        if (player != null) {
+            if (entity instanceof LivingEntity living) {
+                ItemStack stack = player.getStackInHand(player.getActiveHand());
+
+                if (stack.getItem() instanceof FlayedLustItem flayedLustItem) {
+                    if (player.isUsingItem() && !player.getItemCooldownManager().isCoolingDown(OccidereItems.FLAYED_LUST)) {
+                        flayedLustItem.block(player, living, stack, player.getWorld());
+                        cir.setReturnValue(false);
+                        player.damage(source, amount / 2);
+                    }
                 }
             }
         }
