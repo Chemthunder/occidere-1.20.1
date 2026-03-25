@@ -5,6 +5,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
@@ -41,5 +45,26 @@ public class ApiUtils {
 
     public static boolean isGui(ModelTransformationMode modelTransformationMode) {
         return modelTransformationMode == ModelTransformationMode.GROUND || modelTransformationMode == ModelTransformationMode.GUI || modelTransformationMode == ModelTransformationMode.FIXED;
+    }
+
+    public static void spawnSweepAttackParticles(LivingEntity living) {
+        double d = -MathHelper.sin(living.getYaw() * ((float) Math.PI / 180f));
+        double e = MathHelper.cos(living.getYaw() * ((float) Math.PI / 180f));
+
+        if (living.getWorld() instanceof ServerWorld serverWorld) {
+            serverWorld.spawnParticles(ParticleTypes.SWEEP_ATTACK, living.getX() + d, living.getBodyY(0.5f), living.getZ() + e, 0, d, 0.0f, e, 0.0f);
+        }
+    }
+
+    public static void applyCooldown(PlayerEntity player, Item item, int duration) {
+        if (!player.isCreative()) {
+            player.getItemCooldownManager().set(item, duration);
+        }
+    }
+
+    public static void swingHand(PlayerEntity player, Hand hand) {
+        if (player.getWorld().isClient) {
+            player.swingHand(hand);
+        }
     }
 }

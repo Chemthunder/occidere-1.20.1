@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.impl.entity;
 
 import net.chemthunder.occidere.api.ApiUtils;
+import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Ownable;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -43,7 +43,7 @@ public class AurumEntity extends ThrownEntity implements Ownable {
 
             for (Entity living : entities) {
                 if (living != this.getOwner()) {
-                    living.damage(living.getDamageSources().magic(), 1.0f);
+                    living.damage(OccidereDamageSources.aurum(living), 1.0f);
                 }
             }
         }

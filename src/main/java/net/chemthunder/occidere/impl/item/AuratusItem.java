@@ -3,15 +3,18 @@ package net.chemthunder.occidere.impl.item;
 import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.extendable.MiscItem;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.GameMode;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -45,5 +48,10 @@ public class AuratusItem extends MiscItem {
 
     public int getNameColor(ItemStack stack) {
         return 0xFFb89848;
+    }
+
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.literal("Unobtainable").formatted(Formatting.DARK_GRAY));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

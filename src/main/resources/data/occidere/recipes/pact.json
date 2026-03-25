@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "show_notification": false,
+  "category": "equipment",
+  "pattern": [
+    "IF",
+    "PC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:red_candle"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "minecraft:ink_sac"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "occidere:pact",
+    "count": 1
+  }
+}

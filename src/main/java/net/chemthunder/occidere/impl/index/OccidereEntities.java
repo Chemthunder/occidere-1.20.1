@@ -2,13 +2,13 @@ package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.client.render.entity.AurumEntityRenderer;
+import net.chemthunder.occidere.impl.client.render.entity.BoneShardEntityRenderer;
 import net.chemthunder.occidere.impl.client.render.entity.WovenAdmirationEntityRenderer;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.entity.BoneShardEntity;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.client.render.entity.EmptyEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -59,6 +59,6 @@ public interface OccidereEntities {
     static void clientInit() {
         EntityRendererRegistry.register(WOVEN_ADMIRATION, WovenAdmirationEntityRenderer::new);
         EntityRendererRegistry.register(AURUM, AurumEntityRenderer::new);
-        EntityRendererRegistry.register(BONE_SHARD, EmptyEntityRenderer::new);
+        EntityRendererRegistry.register(BONE_SHARD, BoneShardEntityRenderer::new);
     }
 }

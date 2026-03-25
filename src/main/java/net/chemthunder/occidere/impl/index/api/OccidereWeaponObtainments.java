@@ -1,5 +1,6 @@
-package net.chemthunder.occidere.impl.index;
+package net.chemthunder.occidere.impl.index.api;
 
+import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -12,15 +13,10 @@ import java.util.List;
 public interface OccidereWeaponObtainments {
     List<Obtainment> OBTAINMENTS = new LinkedList<>(); // we'll see what works :p
 
-    Obtainment TEST = create(Items.OXEYE_DAISY, Items.OXEYE_DAISY, Blocks.GRASS_BLOCK, Items.NETHERITE_SWORD);
-
     Obtainment VAIN = create(Items.HEART_OF_THE_SEA, Items.BRAIN_CORAL, Blocks.DARK_PRISMARINE, OccidereItems.NYRULNA_VAIN);
     Obtainment HEART = create(Items.NETHERITE_SWORD, Items.BEEF, Blocks.BONE_BLOCK, OccidereItems.BEATING_HEART);
     Obtainment FLAYED_LUST = create(Items.IRON_SWORD, Items.NETHER_WART, Blocks.SMITHING_TABLE, OccidereItems.FLAYED_LUST);
     Obtainment AURUM = create(Items.GOLDEN_SWORD, Items.NETHERITE_SCRAP, Blocks.SMITHING_TABLE, OccidereItems.AURUM);
-
-    Obtainment PACT = create(Items.PAPER, Items.BONE, Blocks.FLETCHING_TABLE, OccidereItems.PACT);
-    Obtainment RIFT_CRACKER = create(Items.END_CRYSTAL, Items.ENDER_PEARL, Blocks.RAW_GOLD_BLOCK, OccidereItems.RIFT_CRACKER);
 
     static Obtainment create(Item base, Item add, Block interactor, Item result) {
         return new Obtainment(base, add, interactor, result);
@@ -30,7 +26,6 @@ public interface OccidereWeaponObtainments {
         OBTAINMENTS.add(VAIN);
         OBTAINMENTS.add(HEART);
         OBTAINMENTS.add(AURUM);
-        OBTAINMENTS.add(PACT);
         OBTAINMENTS.add(FLAYED_LUST);
     }
 

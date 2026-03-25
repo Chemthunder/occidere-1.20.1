@@ -5,6 +5,7 @@ import net.chemthunder.occidere.api.extendable.WeaponItem;
 import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
+import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -81,15 +82,13 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
             if (living != player) {
                 living.setVelocity(player.getBlockPos().subtract(living.getBlockPos()).multiply(-1).toCenterPos());
 
-                living.damage(living.getDamageSources().magic(), 4.5f);
+                living.damage(OccidereDamageSources.vainImpact(living), 4.5f);
             }
         }
 
         player.setVelocity(0, 0, 0);
 
-        if (!player.isCreative()) {
-            player.getItemCooldownManager().set(this, 180);
-        }
+        ApiUtils.applyCooldown(player, this, 180);
 
         if (player.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.spawnParticles(ParticleTypes.END_ROD,

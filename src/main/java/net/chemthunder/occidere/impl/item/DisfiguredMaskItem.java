@@ -1,7 +1,6 @@
 package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.occidere.api.extendable.MiscItem;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 
 public class DisfiguredMaskItem extends MiscItem {

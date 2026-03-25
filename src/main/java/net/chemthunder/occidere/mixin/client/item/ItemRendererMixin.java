@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin.client.item;
 
 import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
-import net.chemthunder.occidere.api.interfaces.HandheldItem;
+import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -28,7 +28,7 @@ public abstract class ItemRendererMixin {
     public BakedModel useModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         PlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null) {
-            if ((stack.getItem() instanceof HandheldItem item) && (!(stack.getItem() instanceof ComplexModelItem)) && (renderMode != ModelTransformationMode.GUI) && renderMode != ModelTransformationMode.GROUND) {
+            if ((stack.getItem() instanceof SimpleModelItem item) && (!(stack.getItem() instanceof ComplexModelItem)) && (renderMode != ModelTransformationMode.GUI) && renderMode != ModelTransformationMode.GROUND) {
                 return ((ItemRendererAccessor) this).renderer$getModels().getModelManager().getModel(new ModelIdentifier(Occidere.MOD_ID, item.getItemId() + "_" + item.handheldId(), "inventory"));
             }
 

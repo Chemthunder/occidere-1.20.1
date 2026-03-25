@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin.client.item;
 
 import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
-import net.chemthunder.occidere.api.interfaces.HandheldItem;
+import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.client.color.block.BlockColors;
@@ -25,13 +25,12 @@ import java.util.Map;
 @SuppressWarnings("rawtypes")
 @Mixin(ModelLoader.class)
 public abstract class ModelLoaderMixin {
-    @Shadow
-    protected abstract void addModel(ModelIdentifier modelId);
+    @Shadow protected abstract void addModel(ModelIdentifier modelId);
 
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V", ordinal = 3, shift = At.Shift.AFTER))
     public void addModels(BlockColors blockColors, Profiler profiler, Map jsonUnbakedModels, Map blockStates, CallbackInfo ci) {
         for (Item value : OccidereItems.ITEMS.keySet()) {
-            if (value instanceof HandheldItem item) {
+            if (value instanceof SimpleModelItem item) {
                 this.addModel(new ModelIdentifier(Occidere.MOD_ID, item.getItemId() + "_" + item.handheldId(), "inventory"));
             }
 

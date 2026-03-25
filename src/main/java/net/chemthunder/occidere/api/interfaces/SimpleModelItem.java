@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.api.interfaces;
 
-public interface HandheldItem {
+public interface SimpleModelItem {
     String getItemId();
     String handheldId();
 }

@@ -14,17 +14,7 @@ public class BoneShardEntity extends ThrownEntity implements Ownable {
     protected void initDataTracker() {}
 
     public void tick() {
-        getWorld().addParticle(ParticleTypes.SOUL,
-                true,
-                this.getX(),
-                this.getY(),
-                this.getZ(),
-                0,
-                0,
-                0
-        );
-
-        getWorld().addParticle(ParticleTypes.EFFECT,
+        getWorld().addParticle(ParticleTypes.SMOKE,
                 false,
                 this.getX(),
                 this.getY(),
@@ -33,7 +23,6 @@ public class BoneShardEntity extends ThrownEntity implements Ownable {
                 0,
                 0
         );
-
         super.tick();
     }
 

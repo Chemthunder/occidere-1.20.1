@@ -12,6 +12,7 @@ import net.minecraft.world.GameMode;
 
 public class AccursedComponent implements AutoSyncedComponent, CommonTickingComponent {
     public static ComponentKey<AccursedComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("accursed"), AccursedComponent.class);
+
     private final PlayerEntity player;
     private boolean isActive = false;
 

@@ -1,7 +1,8 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
+import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.HandheldItem;
+import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,7 +12,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class AurumItem extends WeaponItem implements HandheldItem {
+public class AurumItem extends WeaponItem implements SimpleModelItem {
     public AurumItem(Settings settings) {
         super(settings, 7.5f, -2.6f, true);
     }
@@ -36,15 +37,10 @@ public class AurumItem extends WeaponItem implements HandheldItem {
             entity.setOwner(user);
 
             serverWorld.spawnEntity(entity);
-
-            if (!user.isCreative()) {
-                user.getItemCooldownManager().set(this, 300);
-            } else {
-                user.getItemCooldownManager().set(this, 30);
-            }
+            ApiUtils.applyCooldown(user, this, 300);
         }
 
-        user.swingHand(Hand.MAIN_HAND);
+        ApiUtils.swingHand(user, hand);
         return super.use(world, user, hand);
     }
 }

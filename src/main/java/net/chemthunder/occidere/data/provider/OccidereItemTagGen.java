@@ -16,11 +16,11 @@ public class OccidereItemTagGen extends FabricTagProvider.ItemTagProvider {
         super(output, completableFuture);
     }
 
-    TagKey<Item> RELICS = TagKey.of(RegistryKeys.ITEM, Occidere.id("relics"));
+    TagKey<Item> ALL_ITEMS = TagKey.of(RegistryKeys.ITEM, Occidere.id("all_items"));
 
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         for (Item val : OccidereItems.ITEMS.keySet()) {
-            this.getOrCreateTagBuilder(RELICS)
+            this.getOrCreateTagBuilder(ALL_ITEMS)
                     .add(val)
                     .setReplace(true);
         }

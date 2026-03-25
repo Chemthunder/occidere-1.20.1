@@ -3,6 +3,7 @@ package net.chemthunder.occidere.impl.item;
 import net.chemthunder.occidere.api.extendable.MiscItem;
 import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
 import net.chemthunder.occidere.impl.cca.item.PactComponent;
+import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.player.PlayerEntity;
@@ -48,7 +49,7 @@ public class PactItem extends MiscItem implements ComplexModelItem {
                 pact.setSigner(user.getUuid());
                 pact.setSignerName(user.getDisplayName().getString());
 
-                user.damage(user.getDamageSources().generic(), 1.0f);
+                user.damage(OccidereDamageSources.pact(user), 1.0f);
 
                 if (world.isClient) {
                     user.swingHand(hand);

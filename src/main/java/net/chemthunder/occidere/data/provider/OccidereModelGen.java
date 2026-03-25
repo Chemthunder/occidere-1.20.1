@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.data.provider;
 
-import net.chemthunder.occidere.api.interfaces.HandheldItem;
+import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -16,10 +16,9 @@ public class OccidereModelGen extends FabricModelProvider {
 
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {}
 
-
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         for (Item value : OccidereItems.ITEMS.keySet()) {
-            if (value instanceof HandheldItem) {
+            if (value instanceof SimpleModelItem) {
                 itemModelGenerator.register(value, Models.GENERATED);
             }
         }

@@ -2,16 +2,16 @@ package net.chemthunder.occidere.impl.item.weapon;
 
 import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.HandheldItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.cca.entity.HeartComponent;
 import net.chemthunder.occidere.impl.cca.item.HeartItemComponent;
 import net.chemthunder.occidere.impl.entity.BoneShardEntity;
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -24,7 +24,19 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BeatingHeartItem extends WeaponItem implements HandheldItem, IgnoredByRegisterLangItem {
+public class BeatingHeartItem extends WeaponItem implements SimpleModelItem, IgnoredByRegisterLangItem {
+    List<EntityType> IGNORED = List.of(
+            EntityType.ARROW,
+            EntityType.ITEM,
+            EntityType.TRIDENT,
+            EntityType.ITEM_FRAME,
+            EntityType.GLOW_ITEM_FRAME,
+            EntityType.ARMOR_STAND,
+            EntityType.MINECART,
+            EntityType.BOAT,
+            EntityType.CHEST_BOAT
+    );
+
     public BeatingHeartItem(Settings settings) {
         super(settings, 8.5f, -2.9f, true);
     }
@@ -62,13 +74,14 @@ public class BeatingHeartItem extends WeaponItem implements HandheldItem, Ignore
                         user.getBlockPos(),
                         SoundEvents.ENTITY_WITHER_BREAK_BLOCK,
                         SoundCategory.PLAYERS,
-                        1,
+                        0.3f,
                         1
                 );
 
-                if (world.isClient) {
-                    user.swingHand(hand);
-                }
+                ApiUtils.spawnSweepAttackParticles(user);
+                ApiUtils.applyCooldown(user, this, 20 + (heart.getCapturedBones() + 3));
+
+                ApiUtils.swingHand(user, hand);
             }
         } else {
             List<Entity> t = ApiUtils.getEntitiesInBox(user.getBlockPos(), world, 9000);
@@ -78,15 +91,15 @@ public class BeatingHeartItem extends WeaponItem implements HandheldItem, Ignore
                     if (entity.getOwner() != null) {
                         if (entity.getOwner().equals(user)) {
                             if (world instanceof ServerWorld serverWorld) {
-                                serverWorld.spawnParticles(ParticleTypes.SOUL,
+                                serverWorld.spawnParticles(ParticleTypes.SMOKE,
                                         entity.getX(),
                                         entity.getY(),
                                         entity.getZ(),
-                                        5,
+                                        world.getRandom().nextBetween(6, 11),
                                         0,
                                         0,
                                         0,
-                                        0.3f
+                                        0.1f
                                 );
 
                                 serverWorld.spawnParticles(ParticleTypes.EXPLOSION,
@@ -114,7 +127,7 @@ public class BeatingHeartItem extends WeaponItem implements HandheldItem, Ignore
                                         entity.getX(),
                                         entity.getY(),
                                         entity.getZ(),
-                                        SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
+                                        SoundEvents.ENTITY_DRAGON_FIREBALL_EXPLODE,
                                         SoundCategory.PLAYERS,
                                         1,
                                         0.2f
@@ -124,21 +137,20 @@ public class BeatingHeartItem extends WeaponItem implements HandheldItem, Ignore
                             List<Entity> targets = ApiUtils.getEntitiesInBox(entity.getBlockPos(), world, 7);
 
                             for (Entity gooner : targets) {
-                                if (!(gooner instanceof ProjectileEntity)) {
-                                    gooner.damage(OccidereDamageSources.boneShard(user), 5.0f);
+                                if (!(IGNORED.contains(gooner.getType()))) {
+                                    gooner.damage(OccidereDamageSources.boneShard(user), 3.0f);
                                 } else {
                                     gooner.setVelocity(0, 0, 0);
                                 }
                             }
-
                             entity.discard();
                         }
                     }
                 }
             }
-
             heart.setCapturedBones(0);
             heartItem.setCapturedBones(0);
+            ApiUtils.applyCooldown(user, this, 120);
         }
 
         return super.use(world, user, hand);

@@ -9,6 +9,7 @@ import net.minecraft.nbt.NbtCompound;
 
 public class HeartComponent implements AutoSyncedComponent {
     public static ComponentKey<HeartComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("heart"), HeartComponent.class);
+
     private final PlayerEntity player;
     private int capturedBones = 0;
     public int max = 7;

@@ -3,7 +3,8 @@ package net.chemthunder.occidere.impl;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.chemthunder.occidere.impl.index.OccidereItemGroups;
 import net.chemthunder.occidere.impl.index.OccidereItems;
-import net.chemthunder.occidere.impl.index.OccidereWeaponObtainments;
+import net.chemthunder.occidere.impl.index.api.OccidereUUIDs;
+import net.chemthunder.occidere.impl.index.api.OccidereWeaponObtainments;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -18,8 +19,10 @@ public class Occidere implements ModInitializer {
         OccidereItems.init();
         OccidereItemGroups.init();
         OccidereEntities.init();
-        OccidereWeaponObtainments.init();
 
+        /* Special */
+        OccidereWeaponObtainments.init();
+        OccidereUUIDs.init();
 
         LOGGER.info("loaded!!! [OCCIDERE]");
     }

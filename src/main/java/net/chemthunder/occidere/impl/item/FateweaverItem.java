@@ -3,13 +3,19 @@ package net.chemthunder.occidere.impl.item;
 import net.chemthunder.occidere.api.extendable.MiscItem;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class FateweaverItem extends MiscItem {
     public FateweaverItem(Settings settings) {
@@ -33,5 +39,10 @@ public class FateweaverItem extends MiscItem {
 
     public int getNameColor(ItemStack stack) {
         return 0xFF1f824f;
+    }
+
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.literal("Unobtainable").formatted(Formatting.DARK_GRAY));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

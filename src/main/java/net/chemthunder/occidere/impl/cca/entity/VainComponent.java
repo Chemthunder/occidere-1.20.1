@@ -12,10 +12,8 @@ import net.minecraft.nbt.NbtCompound;
 public class VainComponent implements AutoSyncedComponent, CommonTickingComponent {
     public static ComponentKey<VainComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("vain"), VainComponent.class);
 
-    //region variables
     private final PlayerEntity player;
     private boolean isActive = false;
-    //endregion
 
     public VainComponent(PlayerEntity player) {
         this.player = player;

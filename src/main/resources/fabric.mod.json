@@ -3,9 +3,16 @@
   "id": "occidere",
   "version": "${version}",
   "name": "Occidere",
-  "description": "Tinkering, I think.",
+  "description": "\" In this world, it's kill or be killed. \"",
   "authors": [
     "Chemthunder"
+  ],
+  "contributors": [
+    "Hstar747",
+    "vixo_",
+    "lectra_the_magna",
+    "KindlingCinder",
+    "AcoYT"
   ],
   "license": "CC0-1.0",
   "icon": "assets/occidere/icon.png",
