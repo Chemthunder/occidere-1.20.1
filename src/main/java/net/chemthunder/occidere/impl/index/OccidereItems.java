@@ -3,6 +3,10 @@ package net.chemthunder.occidere.impl.index;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.*;
+import net.chemthunder.occidere.impl.item.weapon.AurumItem;
+import net.chemthunder.occidere.impl.item.weapon.BeatingHeartItem;
+import net.chemthunder.occidere.impl.item.weapon.FlayedLustItem;
+import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -18,9 +22,13 @@ public interface OccidereItems {
     Item AURUM = create("aurum", new AurumItem(new Item.Settings()));
     Item FLAYED_LUST = create("flayed_lust", new FlayedLustItem(new Item.Settings()));
     Item NYRULNA_VAIN = create("nyrulna_vain", new NyrulnaVainItem(new Item.Settings()));
+    Item BEATING_HEART = create("beating_heart", new BeatingHeartItem(new Item.Settings()));
 
     Item FATEWEAVER = create("fateweaver", new FateweaverItem(new Item.Settings().maxCount(1)));
     Item AURATUS = create("auratus", new AuratusItem(new Item.Settings().maxCount(1)));
+    Item PACT = create("pact", new PactItem(new Item.Settings().maxCount(1)));
+    Item RIFT_CRACKER = create("rift_cracker", new RiftCrackerItem(new Item.Settings().maxCount(1)));
+    Item DISFIGURED_MASK = create("disfigured_mask", new DisfiguredMaskItem(new Item.Settings().maxCount(1)));
 
     static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, Occidere.id(name));

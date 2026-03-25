@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.occidere.api.ApiUtils;
-import net.chemthunder.occidere.api.MiscItem;
+import net.chemthunder.occidere.api.extendable.MiscItem;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,9 +22,9 @@ public class AuratusItem extends MiscItem {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user.isSneaking()) {
-            List<LivingEntity> entities = ApiUtils.getEntitiesInBox(user.getBlockPos(), world, 10);
+            List<Entity> entities = ApiUtils.getEntitiesInBox(user.getBlockPos(), world, 10);
 
-            for (LivingEntity entity : entities) {
+            for (Entity entity : entities) {
                 if (entity instanceof ServerPlayerEntity serverPlayer) {
                     AccursedComponent component = AccursedComponent.KEY.get(serverPlayer);
 

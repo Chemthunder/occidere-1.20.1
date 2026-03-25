@@ -1,11 +1,12 @@
-package net.chemthunder.occidere.impl.item;
+package net.chemthunder.occidere.impl.item.weapon;
 
 import net.chemthunder.occidere.api.ApiUtils;
-import net.chemthunder.occidere.api.WeaponItem;
+import net.chemthunder.occidere.api.extendable.WeaponItem;
 import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -74,9 +75,9 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
     }
 
     public void impact(PlayerEntity player, ItemStack stack) {
-        List<LivingEntity> entities = ApiUtils.getEntitiesInBox(player.getBlockPos(), player.getWorld(), 7);
+        List<Entity> entities = ApiUtils.getEntitiesInBox(player.getBlockPos(), player.getWorld(), 7);
 
-        for (LivingEntity living : entities) {
+        for (Entity living : entities) {
             if (living != player) {
                 living.setVelocity(player.getBlockPos().subtract(living.getBlockPos()).multiply(-1).toCenterPos());
 

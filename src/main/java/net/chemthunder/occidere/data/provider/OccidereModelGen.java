@@ -26,5 +26,12 @@ public class OccidereModelGen extends FabricModelProvider {
 
         itemModelGenerator.register(OccidereItems.AURATUS, Models.GENERATED);
         itemModelGenerator.register(OccidereItems.AURATUS, "_second", Models.HANDHELD);
+
+        itemModelGenerator.register(OccidereItems.NYRULNA_VAIN, Models.GENERATED);
+
+        itemModelGenerator.register(OccidereItems.FLAYED_LUST, Models.GENERATED);
+
+        itemModelGenerator.register(OccidereItems.PACT, Models.GENERATED);
+        itemModelGenerator.register(OccidereItems.PACT, "_signed", Models.GENERATED);
     }
 }

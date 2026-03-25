@@ -1,11 +1,11 @@
 package net.chemthunder.occidere.mixin;
 
-import net.chemthunder.occidere.api.WeaponItem;
+import net.chemthunder.occidere.api.extendable.WeaponItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.chemthunder.occidere.impl.index.OccidereItems;
-import net.chemthunder.occidere.impl.item.FlayedLustItem;
-import net.chemthunder.occidere.impl.item.NyrulnaVainItem;
+import net.chemthunder.occidere.impl.item.weapon.FlayedLustItem;
+import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -38,13 +38,15 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         return super.isSneaking();
     }
 
-    @Inject(method = "attack", at = @At(value = "TAIL"))
+    @Inject(method = "attack", at = @At(value = "HEAD"))
     private void occidere$weaponItemSpawnSweepParticles(Entity target, CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity) (Object) this;
 
         if (player.getMainHandStack().getItem() instanceof WeaponItem item) {
             if (item.isSword) {
-                this.spawnSweepAttackParticles();
+                if (player.getAttackCooldownProgress(0.5f) > 0.9f) {
+                    this.spawnSweepAttackParticles();
+                }
             }
         }
     }

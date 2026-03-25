@@ -1,6 +1,7 @@
 package net.chemthunder.occidere.impl.entity;
 
 import net.chemthunder.occidere.api.ApiUtils;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Ownable;
@@ -38,9 +39,9 @@ public class AurumEntity extends ThrownEntity implements Ownable {
 
             this.discard();
         } else {
-            List<LivingEntity> entities = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 10);
+            List<Entity> entities = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 10);
 
-            for (LivingEntity living : entities) {
+            for (Entity living : entities) {
                 if (living != this.getOwner()) {
                     living.damage(living.getDamageSources().magic(), 1.0f);
                 }

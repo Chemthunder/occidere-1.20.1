@@ -36,7 +36,12 @@
   "custom": {
     "cardinal-components": [
       "occidere:accursed",
-      "occidere:vain"
+      "occidere:vain",
+      "occidere:heart",
+
+      "occidere:pact",
+      "occidere:heart_item",
+      "occidere:rift_cracker"
     ]
   }
 }

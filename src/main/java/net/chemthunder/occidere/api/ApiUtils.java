@@ -1,6 +1,7 @@
 package net.chemthunder.occidere.api;
 
 import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,10 +14,10 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ApiUtils {
-    public static List<LivingEntity> getEntitiesInBox(BlockPos pos, World world, int expansion) {
+    public static List<Entity> getEntitiesInBox(BlockPos pos, World world, int expansion) {
         Box area = new Box(pos).expand(expansion);
 
-        return world.getEntitiesByClass(LivingEntity.class, area, entity -> true);
+        return world.getEntitiesByClass(Entity.class, area, entity -> true);
     }
 
     public static void applyRiptide(PlayerEntity player, float strength, int riptideTicks) {
@@ -39,6 +40,6 @@ public class ApiUtils {
     }
 
     public static boolean isGui(ModelTransformationMode modelTransformationMode) {
-        return  modelTransformationMode == ModelTransformationMode.GROUND || modelTransformationMode == ModelTransformationMode.GUI || modelTransformationMode == ModelTransformationMode.FIXED;
+        return modelTransformationMode == ModelTransformationMode.GROUND || modelTransformationMode == ModelTransformationMode.GUI || modelTransformationMode == ModelTransformationMode.FIXED;
     }
 }

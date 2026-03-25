@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api;
+package net.chemthunder.occidere.api.extendable;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -46,9 +46,9 @@ public class WovenAdmirationEntity extends Entity {
                     component.setActive(true);
                 }
 
-                List<LivingEntity> targets = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 50);
+                List<Entity> targets = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 50);
 
-                for (LivingEntity living : targets) {
+                for (Entity living : targets) {
                     if (living instanceof PlayerEntity player) {
                         LuxFlashRenderer.sendFlash(player, 0xffffff, Easing.linear);
                     }

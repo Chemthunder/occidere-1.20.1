@@ -5,7 +5,7 @@ import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.item.NyrulnaVainItem;
+import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 

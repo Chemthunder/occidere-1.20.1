@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin.client;
 
 import net.chemthunder.occidere.impl.item.FateweaverItem;
-import net.chemthunder.occidere.impl.item.FlayedLustItem;
+import net.chemthunder.occidere.impl.item.weapon.FlayedLustItem;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;

@@ -1,9 +1,15 @@
 {
   "item.occidere.auratus": "Auratus",
   "item.occidere.aurum": "Aurum",
+  "item.occidere.beating_heart": "Beating Heart",
   "item.occidere.fateweaver": "Fateweaver",
   "item.occidere.flayed_lust": "Flayed Lust",
   "item.occidere.nyrulna_vain": "Vain of Nyrulna",
+  "item.occidere.pact": "Pact",
+  "item.occidere.rift_cracker": "Rift Cracker",
+  "item.occidere.signed_pact": "Signed Pact",
+  "item.pact.signed": "Signed by ",
+  "item.pact.unsigned": "Unsigned.",
   "itemGroup.occidere": "Occidere",
-  "text.occidere.vain_ready": "Vain of Nyrulna has been charged!"
+  "text.occidere.vain_ready": "<Vain of Nyrulna charged.>"
 }

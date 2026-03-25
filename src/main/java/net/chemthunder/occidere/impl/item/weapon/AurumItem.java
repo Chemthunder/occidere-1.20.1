@@ -1,6 +1,6 @@
-package net.chemthunder.occidere.impl.item;
+package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.occidere.api.WeaponItem;
+import net.chemthunder.occidere.api.extendable.WeaponItem;
 import net.chemthunder.occidere.api.interfaces.HandheldItem;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;

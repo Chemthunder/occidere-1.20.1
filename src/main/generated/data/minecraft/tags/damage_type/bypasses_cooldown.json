@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "occidere:bone_shard",
+      "required": false
+    }
+  ]
+}
