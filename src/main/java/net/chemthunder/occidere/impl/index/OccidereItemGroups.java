@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public interface OccidereItemGroups {
     Map<ItemGroup, RegistryKey<ItemGroup>> GROUPS = new HashMap<>();
     List<String> GROUP_NAMES = new ArrayList<>();

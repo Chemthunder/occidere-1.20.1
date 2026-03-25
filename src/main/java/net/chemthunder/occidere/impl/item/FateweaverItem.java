@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class FateweaverItem extends MiscItem {
     public FateweaverItem(Settings settings) {
         super(settings);
@@ -29,9 +30,7 @@ public class FateweaverItem extends MiscItem {
         target.setPos(target.getX(), target.getY() + 0.5f, target.getZ());
         WovenAdmirationEntity entity = new WovenAdmirationEntity(OccidereEntities.WOVEN_ADMIRATION, world);
 
-        ((ServerWorld) world).getServer().execute(() -> {
-            target.startRiding(entity, true);
-        });
+        ((ServerWorld) world).getServer().execute(() -> target.startRiding(entity, true));
 
         entity.setPos(target.getX(), target.getY(), target.getZ());
         world.spawnEntity(entity);

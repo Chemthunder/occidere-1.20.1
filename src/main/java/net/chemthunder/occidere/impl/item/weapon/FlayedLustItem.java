@@ -21,7 +21,6 @@ public class FlayedLustItem extends WeaponItem implements ComplexModelItem, Igno
         super(settings, 8.0f, -2.7f, true);
     }
 
-
     public int getNameColor(ItemStack stack) {
         return 0xFFa8325c;
     }
@@ -33,7 +32,7 @@ public class FlayedLustItem extends WeaponItem implements ComplexModelItem, Igno
         return super.use(world, user, hand);
     }
 
-    public void block(PlayerEntity player, LivingEntity attacker, ItemStack stack, World world) {
+    public void block(PlayerEntity player, LivingEntity attacker, World world) {
         player.getItemCooldownManager().set(this, 40);
         player.stopUsingItem();
 

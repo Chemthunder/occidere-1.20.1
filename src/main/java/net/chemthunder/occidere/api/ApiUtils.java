@@ -38,7 +38,6 @@ public class ApiUtils {
         player.addVelocity(h, k, l);
         player.useRiptide(riptideTicks);
         if (player.isOnGround()) {
-            float o = 1.1999999F;
             player.move(MovementType.SELF, new Vec3d(0.0F, 1.1999999F, 0.0F));
         }
     }

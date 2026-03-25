@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
+@SuppressWarnings("AmbiguousMixinReference")
 @Mixin(TridentRiptideFeatureRenderer.class)
 public abstract class TridentFeatureRendererMixin {
     @Unique private static final Identifier SPEAR_RIPTIDE_TEXTURE = Occidere.id("textures/entity/vain_riptide.png");

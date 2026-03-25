@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
+@SuppressWarnings("rawtypes")
 public class BeatingHeartItem extends WeaponItem implements SimpleModelItem, IgnoredByRegisterLangItem {
     List<EntityType> IGNORED = List.of(
             EntityType.ARROW,

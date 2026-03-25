@@ -7,6 +7,7 @@ import net.minecraft.world.World;
 
 import java.util.UUID;
 
+@SuppressWarnings("unused")
 public class SpecialObtainment {
     public static UUID getPlayerSpecificUUID() {return null;}
     public static void onCreateEffects(PlayerEntity player, World world) {}

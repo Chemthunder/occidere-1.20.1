@@ -11,7 +11,6 @@ import net.minecraft.item.Items;
 import java.util.UUID;
 
 public class RiftCrackerObtainment extends SpecialObtainment {
-
     public static UUID getPlayerSpecificUUID() {
         return OccidereUUIDs.HSTAR;
     }

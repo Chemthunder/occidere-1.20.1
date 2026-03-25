@@ -19,6 +19,7 @@ import net.minecraft.util.Identifier;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public interface OccidereItems {
     Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 

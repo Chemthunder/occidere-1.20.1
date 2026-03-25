@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, IgnoredByRegisterLangItem {
     private final int ticksToActivate = 10;
 

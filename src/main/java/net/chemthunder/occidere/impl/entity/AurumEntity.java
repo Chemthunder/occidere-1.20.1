@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class AurumEntity extends ThrownEntity implements Ownable {
-    private final int maxAge = 268;
 
     public AurumEntity(EntityType<? extends ThrownEntity> entityType, World world) {
         super(entityType, world);
@@ -23,7 +22,8 @@ public class AurumEntity extends ThrownEntity implements Ownable {
     protected void initDataTracker() {}
 
     public void tick() {
-        if (this.age >= this.maxAge) {
+        int maxAge = 268;
+        if (this.age >= maxAge) {
             if (getWorld() instanceof ServerWorld serverWorld) {
                 serverWorld.spawnParticles(ParticleTypes.END_ROD,
                         this.getX(),

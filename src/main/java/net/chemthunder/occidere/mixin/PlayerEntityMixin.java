@@ -74,7 +74,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
 
                 if (stack.getItem() instanceof FlayedLustItem flayedLustItem) {
                     if (player.isUsingItem() && !player.getItemCooldownManager().isCoolingDown(OccidereItems.FLAYED_LUST)) {
-                        flayedLustItem.block(player, living, stack, player.getWorld());
+                        flayedLustItem.block(player, living, player.getWorld());
                         cir.setReturnValue(false);
                         player.damage(source, amount / 2);
                     }

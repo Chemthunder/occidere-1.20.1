@@ -8,6 +8,7 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public interface OccidereEntityModelLayers {
     Map<EntityModelLayer, EntityModelLayerRegistry.TexturedModelDataProvider> MODEL_LAYERS = new LinkedHashMap<>();
 

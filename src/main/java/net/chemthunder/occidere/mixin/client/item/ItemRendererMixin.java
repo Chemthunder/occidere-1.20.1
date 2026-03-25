@@ -21,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
  * All rights reserved to the developer.
  */
 
+@SuppressWarnings("AmbiguousMixinReference")
 @Mixin(ItemRenderer.class)
 public abstract class ItemRendererMixin {
 
