@@ -2,7 +2,7 @@ package net.chemthunder.occidere.impl.entity;
 
 import net.chemthunder.lux.api.LuxFlashRenderer;
 import net.chemthunder.lux.impl.util.Easing;
-import net.chemthunder.occidere.api.ApiUtils;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

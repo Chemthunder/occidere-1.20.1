@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.data.provider;
+package net.chemthunder.occidere.data.provider.data;
 
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;

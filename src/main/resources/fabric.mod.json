@@ -3,7 +3,7 @@
   "id": "occidere",
   "version": "${version}",
   "name": "Occidere",
-  "description": "\" In this world, it's kill or be killed. \"",
+  "description": "\"In this world, it's kill or be killed.\"",
   "authors": [
     "Chemthunder"
   ],
@@ -19,7 +19,8 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.chemthunder.occidere.impl.Occidere"
+      "net.chemthunder.occidere.impl.Occidere",
+      "net.chemthunder.legere.impl.Legere"
     ],
     "client": [
       "net.chemthunder.occidere.impl.client.OccidereClient"
@@ -32,7 +33,8 @@
     ]
   },
   "mixins": [
-    "occidere.mixins.json"
+    "occidere.mixins.json",
+    "legere.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.11",

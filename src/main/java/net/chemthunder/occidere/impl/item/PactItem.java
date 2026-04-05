@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.impl.item;
 
-import net.chemthunder.occidere.api.extendable.MiscItem;
-import net.chemthunder.occidere.api.interfaces.model.ComplexModelItem;
+import net.chemthunder.legere.api.v1.extendable.item.MiscItem;
+import net.chemthunder.legere.api.v1.interfaces.model.ComplexModelItem;
 import net.chemthunder.occidere.impl.cca.item.PactItemComponent;
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.client.item.TooltipContext;

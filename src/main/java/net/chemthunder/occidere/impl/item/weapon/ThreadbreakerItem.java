@@ -1,13 +1,12 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.occidere.api.ApiUtils;
-import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
+import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.cca.entity.ThreadbreakerComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.LeadItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;

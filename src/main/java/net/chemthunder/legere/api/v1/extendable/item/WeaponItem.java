@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api.extendable;
+package net.chemthunder.legere.api.v1.extendable.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

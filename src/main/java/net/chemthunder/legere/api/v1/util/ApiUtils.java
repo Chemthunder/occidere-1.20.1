@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api;
+package net.chemthunder.legere.api.v1.util;
 
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.Entity;

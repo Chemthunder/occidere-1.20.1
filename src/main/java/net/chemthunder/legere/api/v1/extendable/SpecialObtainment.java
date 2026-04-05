@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api.extendable;
+package net.chemthunder.legere.api.v1.extendable;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;

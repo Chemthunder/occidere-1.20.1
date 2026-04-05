@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.impl.index;
 
-import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.legere.api.v1.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.*;
 import net.chemthunder.occidere.impl.item.weapon.*;

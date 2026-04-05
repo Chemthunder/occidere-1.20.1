@@ -19,7 +19,7 @@ public class VulkanItemComponent extends ItemComponent {
         return this.getInt(REMAINING_AMMUNITION);
     }
 
-    public void setRemainingAmmo(int integer) {
+    public void setAmmo(int integer) {
         this.putInt(REMAINING_AMMUNITION, integer);
     }
 

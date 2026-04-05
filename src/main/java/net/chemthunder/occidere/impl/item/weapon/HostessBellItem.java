@@ -1,8 +1,8 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
-import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
+import net.chemthunder.legere.api.v1.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
 import net.minecraft.item.ItemStack;
 
 public class HostessBellItem extends WeaponItem implements SimpleModelItem, IgnoredByRegisterLangItem {

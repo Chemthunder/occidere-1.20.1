@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.occidere.api.ApiUtils;
-import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.model.ComplexModelItem;
-import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
+import net.chemthunder.legere.api.v1.interfaces.model.ComplexModelItem;
+import net.chemthunder.legere.api.v1.interfaces.IgnoredByRegisterLangItem;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

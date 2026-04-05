@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.data;
 
-import net.chemthunder.occidere.data.provider.OccidereDamageSourceTagGen;
-import net.chemthunder.occidere.data.provider.OccidereItemTagGen;
-import net.chemthunder.occidere.data.provider.OccidereLangGen;
-import net.chemthunder.occidere.data.provider.OccidereModelGen;
+import net.chemthunder.occidere.data.provider.data.OccidereDamageSourceTagGen;
+import net.chemthunder.occidere.data.provider.data.OccidereItemTagGen;
+import net.chemthunder.occidere.data.provider.asset.OccidereLangGen;
+import net.chemthunder.occidere.data.provider.asset.OccidereModelGen;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

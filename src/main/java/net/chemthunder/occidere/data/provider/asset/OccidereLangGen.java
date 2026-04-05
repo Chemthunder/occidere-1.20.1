@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.data.provider;
+package net.chemthunder.occidere.data.provider.asset;
 
 import net.chemthunder.occidere.impl.index.OccidereItemGroups;
 import net.chemthunder.occidere.impl.index.OccidereItems;

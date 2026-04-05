@@ -1,10 +1,9 @@
 package net.chemthunder.occidere.impl.entity;
 
-import net.chemthunder.occidere.api.ApiUtils;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Ownable;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;

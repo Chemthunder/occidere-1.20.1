@@ -1,6 +1,6 @@
-package net.chemthunder.occidere.data.provider;
+package net.chemthunder.occidere.data.provider.asset;
 
-import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;

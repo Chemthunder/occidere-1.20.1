@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.mixin;
 
-import net.chemthunder.occidere.api.extendable.WeaponItem;
+import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.chemthunder.occidere.impl.index.OccidereItems;
@@ -35,30 +35,6 @@ public abstract class PlayerEntityMixin extends LivingEntity {
             return false;
         }
         return super.isSneaking();
-    }
-
-    @Inject(method = "attack", at = @At(value = "HEAD"))
-    private void occidere$weaponItemSpawnSweepParticles(Entity target, CallbackInfo ci) {
-        PlayerEntity player = (PlayerEntity) (Object) this;
-
-        if (player.getMainHandStack().getItem() instanceof WeaponItem item) {
-            if (item.isSword) {
-                if (player.getAttackCooldownProgress(0.5f) > 0.9f) {
-                    this.spawnSweepAttackParticles();
-                }
-            }
-        }
-    }
-
-    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addCritParticles(Lnet/minecraft/entity/Entity;)V"))
-    private void occidere$crit(Entity target, CallbackInfo ci) {
-        PlayerEntity player = (PlayerEntity) (Object) this;
-
-        if (player.getMainHandStack().getItem() instanceof WeaponItem item) {
-            if (target instanceof LivingEntity living) {
-                item.critEffect(player, living, player.getMainHandStack(), player.getWorld());
-            }
-        }
     }
 
     @Inject(method = "damage", at = @At("HEAD"), cancellable = true)

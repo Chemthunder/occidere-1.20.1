@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.mixin.client.item;
+package net.chemthunder.legere.mixin.client.item;
 
 import net.minecraft.client.render.item.ItemModels;
 import net.minecraft.client.render.item.ItemRenderer;

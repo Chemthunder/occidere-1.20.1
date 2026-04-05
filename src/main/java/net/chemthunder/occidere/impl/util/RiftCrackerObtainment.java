@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.impl.util;
 
-import net.chemthunder.occidere.api.extendable.SpecialObtainment;
+import net.chemthunder.legere.api.v1.extendable.SpecialObtainment;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.chemthunder.occidere.impl.index.api.OccidereUUIDs;
 import net.minecraft.block.Block;

@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.impl.item;
 
-import net.chemthunder.occidere.api.extendable.MiscItem;
+import net.chemthunder.legere.api.v1.extendable.item.MiscItem;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.minecraft.client.item.TooltipContext;
