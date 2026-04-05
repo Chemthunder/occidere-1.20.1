@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "occidere:item/hostess_bell_handheld"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 5.75, 0.75],
+			"scale": [2.21, 2.21, 1.2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 5.75, 0.75],
+			"scale": [2.21, 2.21, 1.2]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 6.7, 1.88],
+			"scale": [1.22, 1.22, 1.22]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -25],
+			"translation": [1.13, 6.7, 1.88],
+			"scale": [1.22, 1.22, 1.22]
+		}
+	}
+}

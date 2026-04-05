@@ -40,10 +40,13 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (this.getMaxUseTime(stack) - remainingUseTicks >= ticksToActivate) {
             if (user instanceof PlayerEntity player) {
-                ApiUtils.applyRiptide(player, 3.5f, 20);
-
                 VainComponent component = VainComponent.KEY.get(player);
+
+                ApiUtils.applyRiptide(player, 3.5f, 20);
+                ApiUtils.applyCooldown(player, this, 20);
+
                 component.setActive(true);
+                component.addUse();
 
                 if (world.isClient) {
                     player.playSound(SoundEvents.ITEM_TRIDENT_RIPTIDE_3, SoundCategory.PLAYERS, 1, 1.3f);
@@ -61,7 +64,6 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         if (this.getMaxUseTime(stack) - remainingUseTicks == ticksToActivate) {
             if (user instanceof ServerPlayerEntity player) {
-                player.playSound(SoundEvents.BLOCK_NOTE_BLOCK_PLING.value(), SoundCategory.PLAYERS, 1, 1);
                 player.sendMessage(Text.translatable("text.occidere.vain_ready").formatted(Formatting.ITALIC).formatted(Formatting.DARK_PURPLE), true);
             }
         }

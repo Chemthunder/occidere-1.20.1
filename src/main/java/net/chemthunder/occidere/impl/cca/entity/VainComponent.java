@@ -8,12 +8,14 @@ import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
 
 public class VainComponent implements AutoSyncedComponent, CommonTickingComponent {
     public static ComponentKey<VainComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("vain"), VainComponent.class);
 
     private final PlayerEntity player;
     private boolean isActive = false;
+    private int uses = 0;
 
     public VainComponent(PlayerEntity player) {
         this.player = player;
@@ -28,8 +30,19 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
             if (player.isOnGround()) {
                 if (player.getMainHandStack().getItem() instanceof NyrulnaVainItem vainItem) {
                     this.isActive = false;
+                    this.uses = 0;
                     vainItem.impact(player, player.getMainHandStack());
                     sync();
+                } else {
+                    player.getWorld().addParticle(ParticleTypes.END_ROD,
+                            false,
+                            player.getX(),
+                            player.getY() + 0.5f,
+                            player.getZ(),
+                            0,
+                            0,
+                            0
+                    );
                 }
             }
         }
@@ -37,10 +50,12 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
 
     public void readFromNbt(NbtCompound nbtCompound) {
         this.isActive = nbtCompound.getBoolean("IsActive");
+        this.uses = nbtCompound.getInt("Uses");
     }
 
     public void writeToNbt(NbtCompound nbtCompound) {
         nbtCompound.putBoolean("IsActive", isActive);
+        nbtCompound.putInt("Uses", uses);
     }
 
     public void setActive(boolean bl) {
@@ -50,5 +65,15 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
 
     public boolean isActive() {
         return this.isActive;
+    }
+
+    public void setUses(int i) {
+        this.uses = i;
+        sync();
+    }
+
+    public void addUse() {
+        this.uses++;
+        sync();
     }
 }
