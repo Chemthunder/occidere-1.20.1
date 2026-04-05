@@ -1,12 +1,11 @@
 package net.chemthunder.occidere.impl.entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Ownable;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.world.World;
 
-public class BoneShardEntity extends ThrownEntity implements Ownable {
+public class BoneShardEntity extends ThrownEntity {
     public BoneShardEntity(EntityType<? extends ThrownEntity> entityType, World world) {
         super(entityType, world);
     }

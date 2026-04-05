@@ -6,12 +6,12 @@ import dev.onyxstudios.cca.api.v3.item.ItemComponent;
 import net.chemthunder.occidere.impl.Occidere;
 import net.minecraft.item.ItemStack;
 
-public class RiftCrackerComponent extends ItemComponent {
-    public static final ComponentKey<RiftCrackerComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("rift_cracker"), RiftCrackerComponent.class);
+public class RiftCrackerItemComponent extends ItemComponent {
+    public static final ComponentKey<RiftCrackerItemComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("rift_cracker"), RiftCrackerItemComponent.class);
 
     private static final String WAYPOINT = "waypoint";
 
-    public RiftCrackerComponent(ItemStack stack) {
+    public RiftCrackerItemComponent(ItemStack stack) {
         super(stack);
     }
 

@@ -1,6 +1,7 @@
 package net.chemthunder.occidere.mixin.client;
 
 import net.chemthunder.occidere.impl.item.FateweaverItem;
+import net.chemthunder.occidere.impl.item.VulkanItem;
 import net.chemthunder.occidere.impl.item.weapon.FlayedLustItem;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
@@ -27,6 +28,12 @@ public abstract class PlayerEntityRendererMixin {
 
         if (stack.getItem() instanceof FlayedLustItem) {
             if (player.isUsingItem()) {
+                cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_HOLD);
+            }
+        }
+
+        if (stack.getItem() instanceof VulkanItem) {
+            if (!player.isSneaking()) {
                 cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_HOLD);
             }
         }

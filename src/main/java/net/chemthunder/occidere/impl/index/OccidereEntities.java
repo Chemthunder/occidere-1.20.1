@@ -6,9 +6,11 @@ import net.chemthunder.occidere.impl.client.render.entity.BoneShardEntityRendere
 import net.chemthunder.occidere.impl.client.render.entity.WovenAdmirationEntityRenderer;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.entity.BoneShardEntity;
+import net.chemthunder.occidere.impl.entity.VulkanShotEntity;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.client.render.entity.EmptyEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -47,6 +49,14 @@ public interface OccidereEntities {
             ).disableSaving().disableSummon().dimensions(EntityDimensions.changing(0.5f, 0.5f)
             ).build());
 
+    EntityType<VulkanShotEntity> VULKAN_SHOT = createEntity(
+            "vulkan_shot",
+            FabricEntityTypeBuilder.create(
+                    SpawnGroup.MISC,
+                    VulkanShotEntity::new
+            ).disableSaving().dimensions(EntityDimensions.changing(0.5f, 0.5f)
+            ).build());
+
     private static <T extends EntityType<? extends Entity>> T createEntity(String name, T entity) {
         ENTITIES.put(entity, Occidere.id(name));
         return entity;
@@ -60,5 +70,6 @@ public interface OccidereEntities {
         EntityRendererRegistry.register(WOVEN_ADMIRATION, WovenAdmirationEntityRenderer::new);
         EntityRendererRegistry.register(AURUM, AurumEntityRenderer::new);
         EntityRendererRegistry.register(BONE_SHARD, BoneShardEntityRenderer::new);
+        EntityRendererRegistry.register(VULKAN_SHOT, EmptyEntityRenderer::new);
     }
 }

@@ -10,10 +10,12 @@ import net.chemthunder.occidere.impl.cca.entity.HeartComponent;
 import net.chemthunder.occidere.impl.cca.entity.ThreadbreakerComponent;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.cca.item.HeartItemComponent;
-import net.chemthunder.occidere.impl.cca.item.PactComponent;
-import net.chemthunder.occidere.impl.cca.item.RiftCrackerComponent;
+import net.chemthunder.occidere.impl.cca.item.PactItemComponent;
+import net.chemthunder.occidere.impl.cca.item.RiftCrackerItemComponent;
+import net.chemthunder.occidere.impl.cca.item.VulkanItemComponent;
 import net.chemthunder.occidere.impl.item.PactItem;
 import net.chemthunder.occidere.impl.item.RiftCrackerItem;
+import net.chemthunder.occidere.impl.item.VulkanItem;
 import net.chemthunder.occidere.impl.item.weapon.BeatingHeartItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,8 +30,9 @@ public class OccidereComponents implements EntityComponentInitializer, ItemCompo
     }
 
     public void registerItemComponentFactories(ItemComponentFactoryRegistry registry) {
-        registry.register(item -> item instanceof PactItem, PactComponent.KEY, PactComponent::new);
+        registry.register(item -> item instanceof PactItem, PactItemComponent.KEY, PactItemComponent::new);
         registry.register(item -> item instanceof BeatingHeartItem, HeartItemComponent.KEY, HeartItemComponent::new);
-        registry.register(item -> item instanceof RiftCrackerItem, RiftCrackerComponent.KEY, RiftCrackerComponent::new);
+        registry.register(item -> item instanceof RiftCrackerItem, RiftCrackerItemComponent.KEY, RiftCrackerItemComponent::new);
+        registry.register(item -> item instanceof VulkanItem, VulkanItemComponent.KEY, VulkanItemComponent::new);
     }
 }

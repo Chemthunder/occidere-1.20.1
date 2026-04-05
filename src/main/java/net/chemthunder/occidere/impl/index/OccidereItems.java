@@ -2,10 +2,7 @@ package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.item.AuratusItem;
-import net.chemthunder.occidere.impl.item.FateweaverItem;
-import net.chemthunder.occidere.impl.item.PactItem;
-import net.chemthunder.occidere.impl.item.RiftCrackerItem;
+import net.chemthunder.occidere.impl.item.*;
 import net.chemthunder.occidere.impl.item.weapon.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
@@ -31,6 +28,7 @@ public interface OccidereItems {
     Item AURATUS = create("auratus", new AuratusItem(new Item.Settings().maxCount(1)));
     Item PACT = create("pact", new PactItem(new Item.Settings().maxCount(1)));
     Item RIFT_CRACKER = create("rift_cracker", new RiftCrackerItem(new Item.Settings().maxCount(1)));
+    Item VULKAN = create("vulkan", new VulkanItem(new Item.Settings().maxCount(1)));
 //    Item DISFIGURED_MASK = create("disfigured_mask", new DisfiguredMaskItem(new Item.Settings().maxCount(1)));
 
     static <T extends Item> T create(String name, T item) {

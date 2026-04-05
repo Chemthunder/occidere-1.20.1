@@ -4,7 +4,9 @@ import dev.onyxstudios.cca.api.v3.component.ComponentKey;
 import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
+import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.impl.Occidere;
+import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -29,6 +31,7 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
         if (this.isActive) {
             if (player.isOnGround()) {
                 if (player.getMainHandStack().getItem() instanceof NyrulnaVainItem vainItem) {
+                    ApiUtils.applyCooldown(player, OccidereItems.NYRULNA_VAIN, this.getUses() * 2);
                     this.isActive = false;
                     this.uses = 0;
                     vainItem.impact(player, player.getMainHandStack());

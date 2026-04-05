@@ -2,7 +2,7 @@ package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.occidere.api.extendable.MiscItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
-import net.chemthunder.occidere.impl.cca.item.RiftCrackerComponent;
+import net.chemthunder.occidere.impl.cca.item.RiftCrackerItemComponent;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,7 +28,7 @@ public class RiftCrackerItem extends MiscItem implements IgnoredByRegisterLangIt
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        RiftCrackerComponent component = RiftCrackerComponent.KEY.get(user.getStackInHand(hand));
+        RiftCrackerItemComponent component = RiftCrackerItemComponent.KEY.get(user.getStackInHand(hand));
 
 
         if (user.isSneaking()) {
@@ -45,7 +45,7 @@ public class RiftCrackerItem extends MiscItem implements IgnoredByRegisterLangIt
     }
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        RiftCrackerComponent component = RiftCrackerComponent.KEY.get(stack);
+        RiftCrackerItemComponent component = RiftCrackerItemComponent.KEY.get(stack);
 
         double x = component.getX();
         double y = component.getY();
@@ -68,7 +68,7 @@ public class RiftCrackerItem extends MiscItem implements IgnoredByRegisterLangIt
     }
 
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        RiftCrackerComponent component = RiftCrackerComponent.KEY.get(stack);
+        RiftCrackerItemComponent component = RiftCrackerItemComponent.KEY.get(stack);
 
         if (attacker.isSneaking()) {
             target.teleport(component.getX(), component.getY(), component.getZ(), true);

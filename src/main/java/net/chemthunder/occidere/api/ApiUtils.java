@@ -66,4 +66,8 @@ public class ApiUtils {
             player.swingHand(hand);
         }
     }
+
+    public static boolean hasStack(PlayerEntity player, Item item) {
+        return player.getMainHandStack().isOf(item) || player.getOffHandStack().isOf(item);
+    }
 }

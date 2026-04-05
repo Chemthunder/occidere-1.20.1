@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "occidere:item/vulkan_handheld"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [44.25, -90, 0],
+			"translation": [0, 2.5, -0.75],
+			"scale": [1.47, 1.47, 1.31]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [44.25, 90, 0],
+			"translation": [0, 2.5, -0.75],
+			"scale": [1.47, 1.47, 1.31]
+		},
+		"firstperson_righthand": {
+			"rotation": [54.75, -90, 0],
+			"translation": [1.13, 5.2, 1.88],
+			"scale": [1.01, 1.01, 1.01]
+		},
+		"firstperson_lefthand": {
+			"rotation": [54.75, 90, 0],
+			"translation": [1.13, 5.2, 1.88],
+			"scale": [1.01, 1.01, 1.01]
+		}
+	}
+}

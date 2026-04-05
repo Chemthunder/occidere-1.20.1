@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class PactComponent extends ItemComponent {
-    public static final ComponentKey<PactComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("pact"), PactComponent.class);
+public class PactItemComponent extends ItemComponent {
+    public static final ComponentKey<PactItemComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("pact"), PactItemComponent.class);
 
     private static final String IS_SIGNED = "is_signed";
     private static final String SIGNER = "signer";
     private static final String SIGNER_NAME = "signer_name";
 
-    public PactComponent(ItemStack stack) {
+    public PactItemComponent(ItemStack stack) {
         super(stack);
     }
 

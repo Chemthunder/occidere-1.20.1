@@ -43,7 +43,7 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
                 VainComponent component = VainComponent.KEY.get(player);
 
                 ApiUtils.applyRiptide(player, 3.5f, 20);
-                ApiUtils.applyCooldown(player, this, 20);
+                ApiUtils.applyCooldown(player, this, 10);
 
                 component.setActive(true);
                 component.addUse();
@@ -91,8 +91,6 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
         }
 
         player.setVelocity(0, 0, 0);
-
-        ApiUtils.applyCooldown(player, this, component.getUses() * 2);
 
         if (player.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.spawnParticles(ParticleTypes.END_ROD,

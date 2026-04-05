@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class AurumEntity extends ThrownEntity implements Ownable {
+public class AurumEntity extends ThrownEntity {
 
     public AurumEntity(EntityType<? extends ThrownEntity> entityType, World world) {
         super(entityType, world);
