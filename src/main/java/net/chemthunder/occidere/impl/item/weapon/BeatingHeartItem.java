@@ -3,7 +3,7 @@ package net.chemthunder.occidere.impl.item.weapon;
 import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.extendable.WeaponItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
-import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
+import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.cca.entity.HeartComponent;
 import net.chemthunder.occidere.impl.cca.item.HeartItemComponent;
 import net.chemthunder.occidere.impl.entity.BoneShardEntity;

@@ -7,17 +7,18 @@ import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.chemthunder.occidere.impl.Occidere;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 
 public class ThreadbreakerComponent implements AutoSyncedComponent, CommonTickingComponent {
     public static ComponentKey<ThreadbreakerComponent> KEY = ComponentRegistry.getOrCreate(Occidere.id("threadbreaker"), ThreadbreakerComponent.class);
 
     private final LivingEntity player;
 
-    public int tetherPosX = 0;
-    public int tetherPosY = 0;
-    public int tetherPosZ = 0;
+    public double tetherPosX = 0;
+    public double tetherPosY = 0;
+    public double tetherPosZ = 0;
 
     private int tetheredTicks = 0;
 
@@ -32,22 +33,55 @@ public class ThreadbreakerComponent implements AutoSyncedComponent, CommonTickin
     public void readFromNbt(NbtCompound nbtCompound) {
         this.tetheredTicks = nbtCompound.getInt("TetheredTicks");
 
-        this.tetherPosX = nbtCompound.getInt("TetherPosX");
-        this.tetherPosY = nbtCompound.getInt("TetherPosY");
-        this.tetherPosZ = nbtCompound.getInt("TetherPosZ");
+        this.tetherPosX = nbtCompound.getDouble("TetherPosX");
+        this.tetherPosY = nbtCompound.getDouble("TetherPosY");
+        this.tetherPosZ = nbtCompound.getDouble("TetherPosZ");
     }
 
     public void writeToNbt(NbtCompound nbtCompound) {
         nbtCompound.putInt("TetheredTicks", tetheredTicks);
 
-        nbtCompound.putInt("TetherPosX", tetherPosX);
-        nbtCompound.putInt("TetherPosY", tetherPosY);
-        nbtCompound.putInt("TetherPosZ", tetherPosZ);
+        nbtCompound.putDouble("TetherPosX", tetherPosX);
+        nbtCompound.putDouble("TetherPosY", tetherPosY);
+        nbtCompound.putDouble("TetherPosZ", tetherPosZ);
+    }
+
+    public int getTetheredTicks() {
+        return this.tetheredTicks;
+    }
+
+    public void setTetheredTicks(int i) {
+        this.tetheredTicks = i;
+        this.sync();
     }
 
     public void tick() {
         if (this.tetheredTicks > 0) {
             this.tetheredTicks--;
+
+            if (player.getWorld() instanceof ServerWorld serverWorld) {
+                serverWorld.spawnParticles(ParticleTypes.WAX_ON,
+                        player.getX(),
+                        player.getY() + 0.5f,
+                        player.getZ(),
+                        2,
+                        0,
+                        0,
+                        0,
+                        0.2f
+                );
+
+                serverWorld.spawnParticles(ParticleTypes.END_ROD,
+                        this.tetherPosX,
+                        this.tetherPosY + 0.5f,
+                        this.tetherPosZ,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0.2f
+                );
+            }
 
             if (this.tetheredTicks == 0) {
                 lockAndLoad(player);
@@ -57,15 +91,17 @@ public class ThreadbreakerComponent implements AutoSyncedComponent, CommonTickin
     }
 
     private void lockAndLoad(LivingEntity living) {
-        BlockPos tether = new BlockPos(this.tetherPosX, this.tetherPosY, this.tetherPosZ);
+        BlockPos tether = new BlockPos((int) this.tetherPosX, (int) this.tetherPosY, (int) this.tetherPosZ);
 
         if (living != null) {
-            if (living.getBlockPos() != tether) {
-                living.teleport(this.tetherPosX, this.tetherPosY, this.tetherPosZ, true);
-                double damage = living.getPos().distanceTo(tether.toCenterPos());
+            living.teleport(this.tetherPosX, this.tetherPosY, this.tetherPosZ, false);
+            float damage = Math.round(living.getPos().distanceTo(tether.toCenterPos()) * 4);
 
-                living.damage(living.getDamageSources().generic(), (float) damage);
-            }
+            living.damage(living.getDamageSources().generic(), damage);
+
+            Occidere.LOGGER.info("Dealt {} damage", damage);
+            Occidere.LOGGER.info("Threaadbreaker completed");
+            Occidere.LOGGER.info("spacing message {}", living.getWorld().getRandom().nextBetween(0, 90));
         }
     }
 }

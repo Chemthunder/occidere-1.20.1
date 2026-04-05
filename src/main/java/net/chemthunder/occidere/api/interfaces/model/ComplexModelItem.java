@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api.interfaces;
+package net.chemthunder.occidere.api.interfaces.model;
 
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.player.PlayerEntity;

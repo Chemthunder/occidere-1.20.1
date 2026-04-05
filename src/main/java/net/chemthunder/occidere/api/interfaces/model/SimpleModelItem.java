@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.api.interfaces;
+package net.chemthunder.occidere.api.interfaces.model;
 
 public interface SimpleModelItem {
     String getItemId();

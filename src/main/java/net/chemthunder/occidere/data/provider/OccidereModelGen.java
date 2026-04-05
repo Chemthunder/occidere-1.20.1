@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.data.provider;
 
-import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
+import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -24,7 +24,6 @@ public class OccidereModelGen extends FabricModelProvider {
         }
 
         itemModelGenerator.register(OccidereItems.AURATUS, Models.GENERATED);
-        itemModelGenerator.register(OccidereItems.AURATUS, "_second", Models.HANDHELD);
 
         itemModelGenerator.register(OccidereItems.NYRULNA_VAIN, Models.GENERATED);
 

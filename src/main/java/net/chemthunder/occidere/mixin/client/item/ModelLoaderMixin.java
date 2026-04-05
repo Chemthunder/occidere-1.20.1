@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin.client.item;
 
-import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
-import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
+import net.chemthunder.occidere.api.interfaces.model.ComplexModelItem;
+import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.client.color.block.BlockColors;
@@ -16,11 +16,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
-
-/**
- * This class was created by Vowxky.
- * All rights reserved to the developer.
- */
 
 @SuppressWarnings("rawtypes")
 @Mixin(ModelLoader.class)

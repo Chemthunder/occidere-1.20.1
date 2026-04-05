@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin.client.item;
 
-import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
-import net.chemthunder.occidere.api.interfaces.SimpleModelItem;
+import net.chemthunder.occidere.api.interfaces.model.ComplexModelItem;
+import net.chemthunder.occidere.api.interfaces.model.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -15,11 +15,6 @@ import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-/**
- * This class was created by Vowxky.
- * All rights reserved to the developer.
- */
 
 @SuppressWarnings("AmbiguousMixinReference")
 @Mixin(ItemRenderer.class)

@@ -50,6 +50,17 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         }
     }
 
+    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addCritParticles(Lnet/minecraft/entity/Entity;)V"))
+    private void occidere$crit(Entity target, CallbackInfo ci) {
+        PlayerEntity player = (PlayerEntity) (Object) this;
+
+        if (player.getMainHandStack().getItem() instanceof WeaponItem item) {
+            if (target instanceof LivingEntity living) {
+                item.critEffect(player, living, player.getMainHandStack(), player.getWorld());
+            }
+        }
+    }
+
     @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
     private void occidere$negateFallDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity player = (PlayerEntity) (Object) this;

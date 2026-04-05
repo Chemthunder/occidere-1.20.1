@@ -2,7 +2,7 @@ package net.chemthunder.occidere.impl.item.weapon;
 
 import net.chemthunder.occidere.api.ApiUtils;
 import net.chemthunder.occidere.api.extendable.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.ComplexModelItem;
+import net.chemthunder.occidere.api.interfaces.model.ComplexModelItem;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
@@ -79,6 +79,7 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
     }
 
     public void impact(PlayerEntity player, ItemStack stack) {
+        VainComponent component = VainComponent.KEY.get(player);
         List<Entity> entities = ApiUtils.getEntitiesInBox(player.getBlockPos(), player.getWorld(), 7);
 
         for (Entity living : entities) {
@@ -91,7 +92,7 @@ public class NyrulnaVainItem extends WeaponItem implements ComplexModelItem, Ign
 
         player.setVelocity(0, 0, 0);
 
-        ApiUtils.applyCooldown(player, this, 180);
+        ApiUtils.applyCooldown(player, this, component.getUses() * 2);
 
         if (player.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.spawnParticles(ParticleTypes.END_ROD,

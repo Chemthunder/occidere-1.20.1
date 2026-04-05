@@ -76,4 +76,8 @@ public class VainComponent implements AutoSyncedComponent, CommonTickingComponen
         this.uses++;
         sync();
     }
+
+    public int getUses() {
+        return this.uses;
+    }
 }
