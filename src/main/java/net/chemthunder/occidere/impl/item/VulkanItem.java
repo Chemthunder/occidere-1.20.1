@@ -2,7 +2,7 @@ package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.MiscItem;
-import net.chemthunder.legere.api.v1.interfaces.model.ComplexModelItem;
+import net.chemthunder.legere.api.v1.interfaces.ComplexModelItem;
 import net.chemthunder.occidere.impl.cca.item.VulkanItemComponent;
 import net.chemthunder.occidere.impl.entity.VulkanShotEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;

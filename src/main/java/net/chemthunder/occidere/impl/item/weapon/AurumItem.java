@@ -2,7 +2,7 @@ package net.chemthunder.occidere.impl.item.weapon;
 
 import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
-import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.minecraft.entity.player.PlayerEntity;

@@ -20,6 +20,7 @@ public class OccidereLangGen extends FabricLanguageProvider {
         translationBuilder.add(OccidereItems.BEATING_HEART, "Beating Heart");
         translationBuilder.add(OccidereItems.RIFT_CRACKER, "Rift Cracker");
         translationBuilder.add(OccidereItems.HOSTESS_BELL, "Hostess' Bell");
+        translationBuilder.add(OccidereItems.INTERTWINED_GLAIVE, "Intertwined Glaive");
 
         // item misc
         translationBuilder.add("text.occidere.vain_ready", "<Vain of Nyrulna charged.>");

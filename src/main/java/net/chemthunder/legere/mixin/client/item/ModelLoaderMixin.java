@@ -1,7 +1,7 @@
 package net.chemthunder.legere.mixin.client.item;
 
-import net.chemthunder.legere.api.v1.interfaces.model.ComplexModelItem;
-import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.interfaces.ComplexModelItem;
+import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.client.color.block.BlockColors;
@@ -22,7 +22,15 @@ import java.util.Map;
 public abstract class ModelLoaderMixin {
     @Shadow protected abstract void addModel(ModelIdentifier modelId);
 
-    @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V", ordinal = 3, shift = At.Shift.AFTER))
+    @Inject(
+            method = "<init>",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V",
+                    ordinal = 3,
+                    shift = At.Shift.AFTER
+            )
+    )
     public void addModels(BlockColors blockColors, Profiler profiler, Map jsonUnbakedModels, Map blockStates, CallbackInfo ci) {
         for (Item value : OccidereItems.ITEMS.keySet()) {
             if (value instanceof SimpleModelItem item) {

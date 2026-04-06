@@ -1,4 +1,4 @@
-package net.chemthunder.legere.api.v1.interfaces.model;
+package net.chemthunder.legere.api.v1.interfaces;
 
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.entity.player.PlayerEntity;

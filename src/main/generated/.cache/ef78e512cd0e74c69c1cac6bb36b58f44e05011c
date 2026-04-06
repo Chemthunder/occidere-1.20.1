@@ -1,5 +1,6 @@
-// 1.20.1	2026-04-05T11:33:53.8954562	Occidere/Model Definitions
+// 1.20.1	2026-04-05T19:27:25.117006	Occidere/Model Definitions
 36707c103ea8924a05c2aa53ea39f60334a14fe5 assets\occidere\models\item\nyrulna_vain.json
+387b7fb72e1e4b603d7e35d9c978336698cf7d1f assets\occidere\models\item\intertwined_glaive.json
 d09964dc4ab156200b0855f4c634ce5801aa0db5 assets\occidere\models\item\beating_heart.json
 66a6f9bd137b9b15f38f383c91e2941ee8155dae assets\occidere\models\item\pact.json
 0b332b1b6d9b62a01513704949febfd95fc0622a assets\occidere\models\item\hostess_bell.json
@@ -7,5 +8,5 @@ d09964dc4ab156200b0855f4c634ce5801aa0db5 assets\occidere\models\item\beating_hea
 c71635574a2f391a598b6f18960881814ba25a02 assets\occidere\models\item\threadbreaker.json
 45ce0f09c5eacda27b3bd91f52675652428b5cdc assets\occidere\models\item\pact_signed.json
 2ca184807e8b9a1811f9cdce45f7dbb285a19c70 assets\occidere\models\item\aurum.json
-19556da97bff39f6f2068f75d4a1fede0220af32 assets\occidere\models\item\flayed_lust.json
 10353e042a4d5d254f63690dd0c514c05b3ad80a assets\occidere\models\item\vulkan.json
+19556da97bff39f6f2068f75d4a1fede0220af32 assets\occidere\models\item\flayed_lust.json

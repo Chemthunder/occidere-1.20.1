@@ -1,6 +1,6 @@
 package net.chemthunder.occidere.impl.index;
 
-import net.chemthunder.legere.api.v1.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.*;
 import net.chemthunder.occidere.impl.item.weapon.*;
@@ -23,6 +23,7 @@ public interface OccidereItems {
     Item BEATING_HEART = create("beating_heart", new BeatingHeartItem(new Item.Settings()));
     Item THREADBREAKER = create("threadbreaker", new ThreadbreakerItem(new Item.Settings()));
     Item HOSTESS_BELL = create("hostess_bell", new HostessBellItem(new Item.Settings()));
+    Item INTERTWINED_GLAIVE = create("intertwined_glaive", new IntertwinedGlaiveItem(new Item.Settings()));
 
     Item FATEWEAVER = create("fateweaver", new FateweaverItem(new Item.Settings().maxCount(1)));
     Item AURATUS = create("auratus", new AuratusItem(new Item.Settings().maxCount(1)));

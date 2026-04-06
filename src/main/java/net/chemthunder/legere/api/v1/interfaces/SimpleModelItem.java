@@ -1,4 +1,4 @@
-package net.chemthunder.legere.api.v1.interfaces.model;
+package net.chemthunder.legere.api.v1.interfaces;
 
 public interface SimpleModelItem {
     String getItemId();

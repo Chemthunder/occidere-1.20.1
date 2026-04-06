@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.legere.api.v1.extendable.item.MiscItem;
-import net.chemthunder.legere.api.v1.interfaces.IgnoredByRegisterLangItem;
+import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.cca.item.RiftCrackerItemComponent;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;

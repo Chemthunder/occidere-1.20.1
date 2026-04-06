@@ -1,7 +1,7 @@
 package net.chemthunder.legere.mixin.client.item;
 
-import net.chemthunder.legere.api.v1.interfaces.model.ComplexModelItem;
-import net.chemthunder.legere.api.v1.interfaces.model.SimpleModelItem;
+import net.chemthunder.legere.api.v1.interfaces.ComplexModelItem;
+import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
