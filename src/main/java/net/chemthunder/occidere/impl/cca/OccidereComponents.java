@@ -5,10 +5,7 @@ import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
 import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
 import dev.onyxstudios.cca.api.v3.item.ItemComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.item.ItemComponentInitializer;
-import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
-import net.chemthunder.occidere.impl.cca.entity.HeartComponent;
-import net.chemthunder.occidere.impl.cca.entity.ThreadbreakerComponent;
-import net.chemthunder.occidere.impl.cca.entity.VainComponent;
+import net.chemthunder.occidere.impl.cca.entity.*;
 import net.chemthunder.occidere.impl.cca.item.HeartItemComponent;
 import net.chemthunder.occidere.impl.cca.item.PactItemComponent;
 import net.chemthunder.occidere.impl.cca.item.RiftCrackerItemComponent;
@@ -25,6 +22,7 @@ public class OccidereComponents implements EntityComponentInitializer, ItemCompo
         registry.beginRegistration(PlayerEntity.class, AccursedComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(AccursedComponent::new);
         registry.beginRegistration(PlayerEntity.class, VainComponent.KEY).respawnStrategy(RespawnCopyStrategy.NEVER_COPY).end(VainComponent::new);
         registry.beginRegistration(PlayerEntity.class, HeartComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(HeartComponent::new);
+        registry.beginRegistration(PlayerEntity.class, HostessComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(HostessComponent::new);
 
         registry.beginRegistration(LivingEntity.class, ThreadbreakerComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(ThreadbreakerComponent::new);
     }

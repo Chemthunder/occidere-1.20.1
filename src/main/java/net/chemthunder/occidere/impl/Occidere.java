@@ -1,13 +1,11 @@
 package net.chemthunder.occidere.impl;
 
+import net.chemthunder.occidere.impl.command.HostessCommands;
 import net.chemthunder.occidere.impl.event.ItemStatusEvent;
-import net.chemthunder.occidere.impl.index.OccidereEntities;
-import net.chemthunder.occidere.impl.index.OccidereItemGroups;
-import net.chemthunder.occidere.impl.index.OccidereItems;
-import net.chemthunder.occidere.impl.index.OccidereUUIDs;
-import net.chemthunder.occidere.impl.index.OccidereWeaponObtainments;
+import net.chemthunder.occidere.impl.index.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +26,7 @@ public class Occidere implements ModInitializer {
 
         /* Events */
         ItemTooltipCallback.EVENT.register(new ItemStatusEvent());
+        CommandRegistrationCallback.EVENT.register(new HostessCommands());
 
         LOGGER.info("loaded!!! [OCCIDERE]");
     }
