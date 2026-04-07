@@ -1,8 +1,10 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
 import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.occidere.api.OccidereItemStatus;
+import net.chemthunder.occidere.api.interfaces.ItemStatus;
 import net.chemthunder.occidere.impl.cca.entity.ThreadbreakerComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,7 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class ThreadbreakerItem extends WeaponItem implements SimpleModelItem {
+public class ThreadbreakerItem extends WeaponItem implements SimpleModelItem, ItemStatus {
     public ThreadbreakerItem(Settings settings) {
         super(settings, 8.0f, -2.6f, true);
     }
@@ -62,5 +64,9 @@ public class ThreadbreakerItem extends WeaponItem implements SimpleModelItem {
         }
 
         return super.use(world, user, hand);
+    }
+
+    public OccidereItemStatus getStatus() {
+        return OccidereItemStatus.UNFINISHED;
     }
 }

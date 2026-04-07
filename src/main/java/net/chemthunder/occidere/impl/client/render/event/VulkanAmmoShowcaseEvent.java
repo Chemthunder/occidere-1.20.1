@@ -2,7 +2,6 @@ package net.chemthunder.occidere.impl.client.render.event;
 
 import net.chemthunder.occidere.impl.cca.item.VulkanItemComponent;
 import net.chemthunder.occidere.impl.index.OccidereItems;
-import net.chemthunder.occidere.impl.item.VulkanItem;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;

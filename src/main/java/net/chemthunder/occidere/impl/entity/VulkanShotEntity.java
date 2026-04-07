@@ -1,12 +1,11 @@
 package net.chemthunder.occidere.impl.entity;
 
-import net.chemthunder.occidere.impl.item.VulkanItem;
+import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.EntityHitResult;
@@ -47,7 +46,7 @@ public class VulkanShotEntity extends ThrownEntity {
         if (entity instanceof LivingEntity target) {
             this.discard();
 
-            target.damage(target.getDamageSources().magic(), 3.0f);
+            target.damage(OccidereDamageSources.gunshot(target), 2.0f);
         }
         super.onEntityHit(entityHitResult);
     }

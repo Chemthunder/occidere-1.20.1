@@ -42,5 +42,11 @@ public class OccidereLangGen extends FabricLanguageProvider {
 
         translationBuilder.add("death.attack.vain_impact", "%1$s was disgraced");
         translationBuilder.add("death.attack.vain_impact.player", "%1$s was disgraced by %2$s");
+
+        translationBuilder.add("death.attack.gunshot", "%1$s was shot down");
+        translationBuilder.add("death.attack.gunshot.player", "%1$s was shot down by %2$s");
+
+        translationBuilder.add("death.attack.fateweaver", "%1$s was disfigured by God");
+        translationBuilder.add("death.attack.fateweaver.player", "%1$s was disfigured by God");
     }
 }

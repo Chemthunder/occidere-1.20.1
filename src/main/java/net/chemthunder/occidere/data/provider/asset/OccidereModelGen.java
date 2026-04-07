@@ -23,8 +23,6 @@ public class OccidereModelGen extends FabricModelProvider {
             }
         }
 
-        itemModelGenerator.register(OccidereItems.AURATUS, Models.GENERATED);
-
         itemModelGenerator.register(OccidereItems.NYRULNA_VAIN, Models.GENERATED);
         itemModelGenerator.register(OccidereItems.VULKAN, Models.GENERATED);
 

@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.impl.entity;
 
+import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.lux.api.LuxFlashRenderer;
 import net.chemthunder.lux.impl.util.Easing;
-import net.chemthunder.legere.api.v1.util.ApiUtils;
-import net.chemthunder.occidere.impl.cca.entity.AccursedComponent;
+import net.chemthunder.occidere.impl.index.OccidereDamageSources;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -41,9 +41,11 @@ public class WovenAdmirationEntity extends Entity {
                 }
 
                 if (entity instanceof PlayerEntity player) {
-                    AccursedComponent component = AccursedComponent.KEY.get(player);
+//                    AccursedComponent component = AccursedComponent.KEY.get(player);
+//
+//                    component.setActive(true);
 
-                    component.setActive(true);
+                    player.damage(OccidereDamageSources.fateweaver(player), player.getMaxHealth() * player.getMaxHealth());
                 }
 
                 List<Entity> targets = ApiUtils.getEntitiesInBox(this.getBlockPos(), getWorld(), 50);

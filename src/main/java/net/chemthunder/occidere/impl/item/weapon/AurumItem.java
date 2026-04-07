@@ -1,8 +1,10 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
 import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.occidere.api.OccidereItemStatus;
+import net.chemthunder.occidere.api.interfaces.ItemStatus;
 import net.chemthunder.occidere.impl.entity.AurumEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class AurumItem extends WeaponItem implements SimpleModelItem {
+public class AurumItem extends WeaponItem implements SimpleModelItem, ItemStatus {
     public AurumItem(Settings settings) {
         super(settings, 7.5f, -2.6f, true);
     }
@@ -42,5 +44,9 @@ public class AurumItem extends WeaponItem implements SimpleModelItem {
 
         ApiUtils.swingHand(user, hand);
         return super.use(world, user, hand);
+    }
+
+    public OccidereItemStatus getStatus() {
+        return OccidereItemStatus.EXPERIMENTAL;
     }
 }

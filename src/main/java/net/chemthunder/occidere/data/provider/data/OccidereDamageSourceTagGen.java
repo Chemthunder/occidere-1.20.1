@@ -18,5 +18,12 @@ public class OccidereDamageSourceTagGen extends FabricTagProvider<DamageType> {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         this.getOrCreateTagBuilder(DamageTypeTags.BYPASSES_COOLDOWN)
                 .addOptional(OccidereDamageSources.BONE_SHARD);
+
+        this.getOrCreateTagBuilder(DamageTypeTags.BYPASSES_INVULNERABILITY)
+                .addOptional(OccidereDamageSources.FATEWEAVER);
+        this.getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ARMOR)
+                .addOptional(OccidereDamageSources.FATEWEAVER);
+        this.getOrCreateTagBuilder(DamageTypeTags.BYPASSES_EFFECTS)
+                .addOptional(OccidereDamageSources.FATEWEAVER);
     }
 }

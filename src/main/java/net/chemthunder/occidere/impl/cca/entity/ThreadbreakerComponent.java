@@ -5,6 +5,7 @@ import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.chemthunder.occidere.impl.Occidere;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
@@ -79,7 +80,7 @@ public class ThreadbreakerComponent implements AutoSyncedComponent, CommonTickin
                         0,
                         0,
                         0,
-                        0.2f
+                        0f
                 );
             }
 
@@ -99,9 +100,11 @@ public class ThreadbreakerComponent implements AutoSyncedComponent, CommonTickin
 
             living.damage(living.getDamageSources().generic(), damage);
 
-            Occidere.LOGGER.info("Dealt {} damage", damage);
-            Occidere.LOGGER.info("Threaadbreaker completed");
-            Occidere.LOGGER.info("spacing message {}", living.getWorld().getRandom().nextBetween(0, 90));
+            if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                Occidere.LOGGER.info("Dealt {} damage", damage);
+                Occidere.LOGGER.info("Threaadbreaker completed");
+                Occidere.LOGGER.info("spacing message {}", living.getWorld().getRandom().nextBetween(0, 90));
+            }
         }
     }
 }

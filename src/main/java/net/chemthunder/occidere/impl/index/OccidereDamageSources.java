@@ -28,6 +28,16 @@ public interface OccidereDamageSources {
         return entity.getDamageSources().create(VAIN_IMPACT);
     }
 
+    RegistryKey<DamageType> FATEWEAVER = of("fateweaver");
+    static DamageSource fateweaver(Entity entity) {
+        return entity.getDamageSources().create(FATEWEAVER);
+    }
+
+    RegistryKey<DamageType> GUNSHOT = of("gunshot");
+    static DamageSource gunshot(Entity entity) {
+        return entity.getDamageSources().create(GUNSHOT);
+    }
+
     private static RegistryKey<DamageType> of(String name) {
         return RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Occidere.id(name));
     }

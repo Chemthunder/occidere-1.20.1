@@ -1,9 +1,9 @@
 package net.chemthunder.occidere.impl.item.weapon;
 
-import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
-import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.cca.entity.HeartComponent;
 import net.chemthunder.occidere.impl.cca.item.HeartItemComponent;
 import net.chemthunder.occidere.impl.entity.BoneShardEntity;
@@ -130,7 +130,7 @@ public class BeatingHeartItem extends WeaponItem implements SimpleModelItem, Ign
                                         entity.getZ(),
                                         SoundEvents.ENTITY_DRAGON_FIREBALL_EXPLODE,
                                         SoundCategory.PLAYERS,
-                                        1,
+                                        0.5f,
                                         0.2f
                                 );
                             }

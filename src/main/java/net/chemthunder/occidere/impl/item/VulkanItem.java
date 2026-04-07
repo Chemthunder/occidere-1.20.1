@@ -1,8 +1,10 @@
 package net.chemthunder.occidere.impl.item;
 
-import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.legere.api.v1.extendable.item.MiscItem;
 import net.chemthunder.legere.api.v1.interfaces.ComplexModelItem;
+import net.chemthunder.legere.api.v1.util.ApiUtils;
+import net.chemthunder.occidere.api.OccidereItemStatus;
+import net.chemthunder.occidere.api.interfaces.ItemStatus;
 import net.chemthunder.occidere.impl.cca.item.VulkanItemComponent;
 import net.chemthunder.occidere.impl.entity.VulkanShotEntity;
 import net.chemthunder.occidere.impl.index.OccidereEntities;
@@ -19,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class VulkanItem extends MiscItem implements ComplexModelItem {
+public class VulkanItem extends MiscItem implements ComplexModelItem, ItemStatus {
     public final int maxAmmo = 6;
 
     public VulkanItem(Settings settings) {
@@ -108,5 +110,9 @@ public class VulkanItem extends MiscItem implements ComplexModelItem {
                 "vulkan_handheld",
                 "vulkan_loading"
         );
+    }
+
+    public OccidereItemStatus getStatus() {
+        return OccidereItemStatus.EXPERIMENTAL;
     }
 }
