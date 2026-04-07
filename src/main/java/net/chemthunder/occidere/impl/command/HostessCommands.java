@@ -2,10 +2,12 @@ package net.chemthunder.occidere.impl.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.chemthunder.occidere.impl.cca.entity.HostessComponent;
+import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.chemthunder.occidere.impl.manager.HostessManager;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
@@ -24,6 +26,20 @@ public class HostessCommands implements CommandRegistrationCallback {
                                 }
 
                                 context.getSource().sendFeedback(() -> Text.literal("Hostess has modified her invincibility to " + component.isInvincible()), true);
+                            }
+                            return 1;
+                        }).requires(serverCommandSource -> HostessManager.isHostess(serverCommandSource.getEntity()))
+        );
+
+        commandDispatcher.register(
+                CommandManager.literal("hostess:givePact")
+                        .executes(context -> {
+                            PlayerEntity player = context.getSource().getPlayer();
+
+                            if (player != null) {
+                                player.giveItemStack(new ItemStack(OccidereItems.PACT));
+
+                                context.getSource().sendFeedback(() -> Text.literal("Hostess has bestown herself with a Pact."), true);
                             }
                             return 1;
                         }).requires(serverCommandSource -> HostessManager.isHostess(serverCommandSource.getEntity()))
