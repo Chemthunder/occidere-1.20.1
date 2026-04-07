@@ -1,7 +1,7 @@
 package net.chemthunder.occidere.mixin;
 
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.index.api.OccidereWeaponObtainments;
+import net.chemthunder.occidere.impl.index.OccidereWeaponObtainments;
 import net.fabricmc.fabric.api.item.v1.FabricItemStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;

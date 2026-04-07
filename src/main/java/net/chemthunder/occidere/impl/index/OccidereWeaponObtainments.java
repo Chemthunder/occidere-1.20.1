@@ -1,6 +1,5 @@
-package net.chemthunder.occidere.impl.index.api;
+package net.chemthunder.occidere.impl.index;
 
-import net.chemthunder.occidere.impl.index.OccidereItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -34,6 +33,7 @@ public interface OccidereWeaponObtainments {
         OBTAINMENTS.add(FLAYED_LUST);
         OBTAINMENTS.add(VULKAN);
         OBTAINMENTS.add(FATEWEAVER);
+        OBTAINMENTS.add(RIFT_CRACKER);
     }
 
     static boolean isBaseItem(Item toTest) {

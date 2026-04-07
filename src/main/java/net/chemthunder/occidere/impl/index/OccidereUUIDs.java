@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.impl.index.api;
+package net.chemthunder.occidere.impl.index;
 
 import java.util.ArrayList;
 import java.util.List;
