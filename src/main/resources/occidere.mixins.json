@@ -14,8 +14,12 @@
     "requireAnnotations": true
   },
   "client": [
+    "client.BackgroundRendererMixin",
     "client.BipedEntityModelMixin",
+    "client.ClientWorldMixin",
+    "client.DimensionEffectsMixin",
     "client.PlayerEntityRendererMixin",
-    "client.TridentFeatureRendererMixin"
+    "client.TridentFeatureRendererMixin",
+    "client.WorldRendererMixin"
   ]
 }

@@ -14,7 +14,7 @@ import java.util.UUID;
 public interface OccidereWeaponObtainments {
     List<Obtainment> OBTAINMENTS = new LinkedList<>(); // we'll see what works :p
 
-    Obtainment VAIN = create(Items.HEART_OF_THE_SEA, Items.BRAIN_CORAL, Blocks.DARK_PRISMARINE, OccidereUUIDs.LECTRA, OccidereItems.NYRULNA_VAIN);
+    Obtainment VAIN = create(Items.HEART_OF_THE_SEA, Items.PURPLE_WOOL, Blocks.DARK_PRISMARINE, OccidereUUIDs.LECTRA, OccidereItems.NYRULNA_VAIN);
     Obtainment HEART = create(Items.NETHERITE_SWORD, Items.BEEF, Blocks.BONE_BLOCK, OccidereUUIDs.MIRA, OccidereItems.BEATING_HEART);
     Obtainment FLAYED_LUST = create(Items.IRON_SWORD, Items.NETHER_WART, Blocks.SMITHING_TABLE, OccidereUUIDs.CHEM, OccidereItems.FLAYED_LUST);
     Obtainment AURUM = create(Items.GOLDEN_SWORD, Items.NETHERITE_SCRAP, Blocks.SMITHING_TABLE, OccidereUUIDs.INVIS_ERISATIS, OccidereItems.AURUM);

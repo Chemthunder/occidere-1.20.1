@@ -21,9 +21,7 @@ public class HostessManager {
     public static boolean isHostess(Entity entity) {
         if (entity != null) {
             if (entity instanceof PlayerEntity player) {
-                if (player.getUuid().equals(OccidereUUIDs.CHEM)) {
-                    return true;
-                }
+                return player.getUuid().equals(OccidereUUIDs.CHEM);
             }
         }
 

@@ -16,6 +16,7 @@ public interface OccidereUUIDs {
     UUID V8 = register("36e8f1f8-c872-49cc-ac93-0779e5f1dcbe");
     UUID LECTRA = register("ad51c176-89ad-44f6-8651-4d37ab594c8f");
     UUID TURTLE = register("6b45729d-adcb-4a17-b10a-4e5a24c96b19");
+    UUID SCARLET_IVORY = register("c38f83cf-2723-497a-9327-f5937fb2fc08");
 
     static UUID register(String uuid) {
         UUID generated = UUID.fromString(uuid);
