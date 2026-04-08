@@ -16,7 +16,7 @@ import net.chemthunder.occidere.impl.cca.world.FatesDominionWorldEvent;
 import net.chemthunder.occidere.impl.item.PactItem;
 import net.chemthunder.occidere.impl.item.RiftCrackerItem;
 import net.chemthunder.occidere.impl.item.VulkanItem;
-import net.chemthunder.occidere.impl.item.weapon.BeatingHeartItem;
+import net.chemthunder.occidere.impl.item.BeatingHeartItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 

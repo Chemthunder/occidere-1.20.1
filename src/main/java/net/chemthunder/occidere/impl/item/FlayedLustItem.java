@@ -1,4 +1,4 @@
-package net.chemthunder.occidere.impl.item.weapon;
+package net.chemthunder.occidere.impl.item;
 
 import net.chemthunder.legere.api.v1.extendable.item.WeaponItem;
 import net.chemthunder.legere.api.v1.interfaces.ComplexModelItem;

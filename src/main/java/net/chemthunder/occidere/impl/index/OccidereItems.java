@@ -2,11 +2,7 @@ package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
-import net.chemthunder.occidere.impl.item.FateweaverItem;
-import net.chemthunder.occidere.impl.item.PactItem;
-import net.chemthunder.occidere.impl.item.RiftCrackerItem;
-import net.chemthunder.occidere.impl.item.VulkanItem;
-import net.chemthunder.occidere.impl.item.weapon.*;
+import net.chemthunder.occidere.impl.item.*;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;

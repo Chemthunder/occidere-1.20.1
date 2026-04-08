@@ -7,7 +7,7 @@ import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.chemthunder.legere.api.v1.util.ApiUtils;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.index.OccidereItems;
-import net.chemthunder.occidere.impl.item.weapon.NyrulnaVainItem;
+import net.chemthunder.occidere.impl.item.NyrulnaVainItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;

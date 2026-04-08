@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
 public class OccidereDataGen implements DataGeneratorEntrypoint {
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+    public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
         pack.addProvider(OccidereLangGen::new);
@@ -20,7 +20,7 @@ public class OccidereDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(OccidereItemTagGen::new);
         pack.addProvider(OccidereDamageSourceTagGen::new);
         pack.addProvider(OccidereDynamicRegistryGen::new);
-	}
+    }
 
     public void buildRegistry(RegistryBuilder registryBuilder) {
         registryBuilder.addRegistry(RegistryKeys.DAMAGE_TYPE, OccidereDamageSources::bootstrap);
