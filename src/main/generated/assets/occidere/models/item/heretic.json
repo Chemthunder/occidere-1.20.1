@@ -1,0 +1,6 @@
+{
+  "parent": "occidere:item/template/gem",
+  "textures": {
+    "layer0": "occidere:item/heretic"
+  }
+}

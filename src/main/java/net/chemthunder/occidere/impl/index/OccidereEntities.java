@@ -3,11 +3,9 @@ package net.chemthunder.occidere.impl.index;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.client.render.entity.AurumEntityRenderer;
 import net.chemthunder.occidere.impl.client.render.entity.BoneShardEntityRenderer;
+import net.chemthunder.occidere.impl.client.render.entity.HereticSawEntityRenderer;
 import net.chemthunder.occidere.impl.client.render.entity.WovenAdmirationEntityRenderer;
-import net.chemthunder.occidere.impl.entity.AurumEntity;
-import net.chemthunder.occidere.impl.entity.BoneShardEntity;
-import net.chemthunder.occidere.impl.entity.VulkanShotEntity;
-import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
+import net.chemthunder.occidere.impl.entity.*;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.client.render.entity.EmptyEntityRenderer;
@@ -57,6 +55,22 @@ public interface OccidereEntities {
             ).disableSaving().dimensions(EntityDimensions.changing(0.5f, 0.5f)
             ).build());
 
+    EntityType<HereticSawEntity> HERETIC_SAW = createEntity(
+            "heretic_saw",
+            FabricEntityTypeBuilder.create(
+                    SpawnGroup.MISC,
+                    HereticSawEntity::new
+            ).disableSaving().dimensions(EntityDimensions.changing(1.0f, 0.5f)
+            ).build());
+
+    EntityType<AuratusBeamEntity> AURATUS_CHAIN = createEntity(
+            "auratus_chain",
+            FabricEntityTypeBuilder.create(
+                    SpawnGroup.MISC,
+                    AuratusBeamEntity::new
+            ).disableSaving().dimensions(EntityDimensions.changing(1.0f, 0.5f)
+            ).build());
+
     private static <T extends EntityType<? extends Entity>> T createEntity(String name, T entity) {
         ENTITIES.put(entity, Occidere.id(name));
         return entity;
@@ -71,5 +85,7 @@ public interface OccidereEntities {
         EntityRendererRegistry.register(AURUM, AurumEntityRenderer::new);
         EntityRendererRegistry.register(BONE_SHARD, BoneShardEntityRenderer::new);
         EntityRendererRegistry.register(VULKAN_SHOT, EmptyEntityRenderer::new);
+        EntityRendererRegistry.register(HERETIC_SAW, HereticSawEntityRenderer::new);
+        EntityRendererRegistry.register(AURATUS_CHAIN, EmptyEntityRenderer::new);
     }
 }

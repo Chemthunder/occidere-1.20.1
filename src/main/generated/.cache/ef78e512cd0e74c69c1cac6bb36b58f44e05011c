@@ -1,11 +1,19 @@
-// 1.20.1	2026-04-07T17:10:06.4405569	Occidere/Model Definitions
-36707c103ea8924a05c2aa53ea39f60334a14fe5 assets\occidere\models\item\nyrulna_vain.json
+// 1.20.1	2026-04-08T20:01:19.3451836	Occidere/Model Definitions
+41f69ba2655339bf8a2e491055e2f88b9a15103b assets\occidere\models\item\auratus_heretic_tainted_blocking.json
 387b7fb72e1e4b603d7e35d9c978336698cf7d1f assets\occidere\models\item\intertwined_glaive.json
-d09964dc4ab156200b0855f4c634ce5801aa0db5 assets\occidere\models\item\beating_heart.json
+83b5f120a01666de414a693c0b68ad4002167781 assets\occidere\models\item\auratus_heretic_gilded_handheld.json
+4ed85998750af4914f741710c096fbef39795807 assets\occidere\models\item\auratus_heretic.json
+771dc849e225dba875a4f464f0f2a5c4daf12f86 assets\occidere\models\item\auratus_heretic_tainted.json
 66a6f9bd137b9b15f38f383c91e2941ee8155dae assets\occidere\models\item\pact.json
+7f959329df8d600f06a3c62c282663b52749b7e8 assets\occidere\models\item\auratus.json
+cb3102ac85059ca3e7d51b3e4307386af3011885 assets\occidere\models\item\auratus_heretic_tainted_handheld.json
+dbb7f45af651c9e9280c0366ad22c4d0be623142 assets\occidere\models\item\auratus_heretic_gilded_blocking.json
+10353e042a4d5d254f63690dd0c514c05b3ad80a assets\occidere\models\item\vulkan.json
+36707c103ea8924a05c2aa53ea39f60334a14fe5 assets\occidere\models\item\nyrulna_vain.json
+d09964dc4ab156200b0855f4c634ce5801aa0db5 assets\occidere\models\item\beating_heart.json
 0b332b1b6d9b62a01513704949febfd95fc0622a assets\occidere\models\item\hostess_bell.json
 c71635574a2f391a598b6f18960881814ba25a02 assets\occidere\models\item\threadbreaker.json
 45ce0f09c5eacda27b3bd91f52675652428b5cdc assets\occidere\models\item\pact_signed.json
+3e2d484130a6fe7ff0bcaa85ea4325cc23e62f39 assets\occidere\models\item\heretic.json
 2ca184807e8b9a1811f9cdce45f7dbb285a19c70 assets\occidere\models\item\aurum.json
-10353e042a4d5d254f63690dd0c514c05b3ad80a assets\occidere\models\item\vulkan.json
 19556da97bff39f6f2068f75d4a1fede0220af32 assets\occidere\models\item\flayed_lust.json

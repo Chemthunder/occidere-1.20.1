@@ -6,6 +6,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
@@ -52,6 +54,15 @@ public class ApiUtils {
 
         if (living.getWorld() instanceof ServerWorld serverWorld) {
             serverWorld.spawnParticles(ParticleTypes.SWEEP_ATTACK, living.getX() + d, living.getBodyY(0.5f), living.getZ() + e, 0, d, 0.0f, e, 0.0f);
+        }
+    }
+
+    public static <T extends ParticleEffect> void spawnCustomSweepAttackParticles(LivingEntity living, T type) {
+        double d = -MathHelper.sin(living.getYaw() * ((float) Math.PI / 180f));
+        double e = MathHelper.cos(living.getYaw() * ((float) Math.PI / 180f));
+
+        if (living.getWorld() instanceof ServerWorld serverWorld) {
+            serverWorld.spawnParticles(type, living.getX() + d, living.getBodyY(0.5f), living.getZ() + e, 0, d, 0.0f, e, 0.0f);
         }
     }
 

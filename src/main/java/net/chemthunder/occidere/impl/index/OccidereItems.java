@@ -3,6 +3,7 @@ package net.chemthunder.occidere.impl.index;
 import net.chemthunder.occidere.api.interfaces.IgnoredByRegisterLangItem;
 import net.chemthunder.occidere.impl.Occidere;
 import net.chemthunder.occidere.impl.item.*;
+import net.chemthunder.occidere.impl.util.AuratusHereticState;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -28,6 +29,10 @@ public interface OccidereItems {
     Item PACT = create("pact", new PactItem(new Item.Settings().maxCount(1)));
     Item RIFT_CRACKER = create("rift_cracker", new RiftCrackerItem(new Item.Settings().maxCount(1)));
     Item VULKAN = create("vulkan", new VulkanItem(new Item.Settings().maxCount(1)));
+
+    Item AURATUS_HERETIC = create("auratus_heretic", new AuratusHereticItem(new Item.Settings()));
+    Item AURATUS = create("auratus", new AHGemItem(new Item.Settings().maxCount(1), AuratusHereticState.GILDED));
+    Item HERETIC = create("heretic", new AHGemItem(new Item.Settings().maxCount(1), AuratusHereticState.TAINTED));
 
     static <T extends Item> T create(String name, T item) {
         ITEMS.put(item, Occidere.id(name));

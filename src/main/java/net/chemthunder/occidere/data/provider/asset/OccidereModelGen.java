@@ -2,6 +2,7 @@ package net.chemthunder.occidere.data.provider.asset;
 
 import net.chemthunder.legere.api.v1.interfaces.SimpleModelItem;
 import net.chemthunder.occidere.impl.index.OccidereItems;
+import net.chemthunder.occidere.impl.index.OccidereModels;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -32,5 +33,13 @@ public class OccidereModelGen extends FabricModelProvider {
         itemModelGenerator.register(OccidereItems.PACT, "_signed", Models.GENERATED);
 
         itemModelGenerator.register(OccidereItems.INTERTWINED_GLAIVE, Models.GENERATED);
+
+        itemModelGenerator.register(OccidereItems.AURATUS, OccidereModels.GEM);
+        itemModelGenerator.register(OccidereItems.HERETIC, OccidereModels.GEM);
+
+        itemModelGenerator.register(OccidereItems.AURATUS_HERETIC, Models.GENERATED);
+        itemModelGenerator.register(OccidereItems.AURATUS_HERETIC, "_tainted", Models.GENERATED);
+        itemModelGenerator.register(OccidereItems.AURATUS_HERETIC, "_gilded_handheld", OccidereModels.HERETIC_HANDHELD);
+        itemModelGenerator.register(OccidereItems.AURATUS_HERETIC, "_tainted_handheld", OccidereModels.HERETIC_HANDHELD);
     }
 }

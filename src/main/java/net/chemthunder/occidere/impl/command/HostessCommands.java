@@ -91,5 +91,29 @@ public class HostessCommands implements CommandRegistrationCallback {
                             return 1;
                         }).requires(serverCommandSource -> HostessManager.isHostess(serverCommandSource.getEntity()))
         );
+
+        commandDispatcher.register(
+                CommandManager.literal("hostess:ivoryevent:giveAuratus")
+                        .executes(context -> {
+                            PlayerEntity player = context.getSource().getPlayer();
+
+                            if (player != null) {
+                                player.giveItemStack(OccidereItems.AURATUS.getDefaultStack());
+                            }
+                            return 1;
+                        }).requires(serverCommandSource -> HostessManager.isHostess(serverCommandSource.getEntity()))
+        );
+
+        commandDispatcher.register(
+                CommandManager.literal("hostess:ivoryevent:giveHeretic")
+                        .executes(context -> {
+                            PlayerEntity player = context.getSource().getPlayer();
+
+                            if (player != null) {
+                                player.giveItemStack(OccidereItems.HERETIC.getDefaultStack());
+                            }
+                            return 1;
+                        }).requires(serverCommandSource -> HostessManager.isHostess(serverCommandSource.getEntity()))
+        );
     }
 }

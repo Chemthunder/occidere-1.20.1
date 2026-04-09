@@ -1,6 +1,9 @@
 package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.impl.Occidere;
+import net.chemthunder.occidere.impl.cca.item.AuratusHereticItemComponent;
+import net.chemthunder.occidere.impl.item.AuratusHereticItem;
+import net.chemthunder.occidere.impl.util.AuratusHereticState;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -48,6 +51,11 @@ public interface OccidereItemGroups {
         for (Item value : OccidereItems.ITEMS.keySet()) {
             itemGroup.add(value);
         }
+
+        ItemStack TAINTED_AURATUS = new ItemStack(OccidereItems.AURATUS_HERETIC);
+        AuratusHereticItemComponent.KEY.get(TAINTED_AURATUS).setMode(AuratusHereticState.TAINTED);
+
+        itemGroup.addAfter(OccidereItems.AURATUS_HERETIC, TAINTED_AURATUS);
     }
 
     static void registerLang(FabricLanguageProvider.TranslationBuilder builder) {

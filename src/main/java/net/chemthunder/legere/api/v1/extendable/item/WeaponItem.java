@@ -11,6 +11,8 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -54,4 +56,6 @@ public class WeaponItem extends Item {
     }
 
     public void critEffect(PlayerEntity player, LivingEntity target, ItemStack stack, World world) {}
+
+    public ParticleEffect getSweepParticle(PlayerEntity player, ItemStack stack) {return null;}
 }

@@ -17,6 +17,8 @@ public class Occidere implements ModInitializer {
         OccidereItems.init();
         OccidereItemGroups.init();
         OccidereEntities.init();
+        OccidereParticles.init();
+        OccidereSounds.init();
 
         /* Special */
         OccidereWeaponObtainments.init();

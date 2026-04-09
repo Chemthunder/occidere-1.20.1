@@ -1,0 +1,8 @@
+{
+    "item.heretic.parry": {
+        "sounds": [
+            "occidere:item/heretic_parry"
+        ],
+        "subtitle": "subtitles.occidere.item.heretic.parry"
+    }
+}

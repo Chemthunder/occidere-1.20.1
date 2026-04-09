@@ -6,6 +6,7 @@ import net.chemthunder.occidere.data.provider.data.OccidereDamageSourceTagGen;
 import net.chemthunder.occidere.data.provider.data.OccidereDynamicRegistryGen;
 import net.chemthunder.occidere.data.provider.data.OccidereItemTagGen;
 import net.chemthunder.occidere.impl.index.OccidereDamageSources;
+import net.chemthunder.occidere.impl.index.OccidereParticles;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;

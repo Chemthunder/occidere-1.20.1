@@ -1,14 +1,18 @@
 package net.chemthunder.occidere.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import net.chemthunder.occidere.impl.cca.entity.HostessComponent;
 import net.chemthunder.occidere.impl.cca.entity.VainComponent;
 import net.chemthunder.occidere.impl.cca.item.PactItemComponent;
 import net.chemthunder.occidere.impl.entity.WovenAdmirationEntity;
 import net.chemthunder.occidere.impl.index.OccidereItems;
+import net.chemthunder.occidere.impl.index.OccidereParticles;
+import net.chemthunder.occidere.impl.item.AHGemItem;
 import net.chemthunder.occidere.impl.item.PactItem;
 import net.chemthunder.occidere.impl.item.FlayedLustItem;
 import net.chemthunder.occidere.impl.item.NyrulnaVainItem;
 import net.chemthunder.occidere.impl.manager.HostessManager;
+import net.chemthunder.occidere.impl.manager.IvoryEventManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -99,4 +103,26 @@ public abstract class PlayerEntityMixin extends LivingEntity {
             }
         }
     }
+
+    @Inject(method = "attack", at = @At("HEAD"))
+    private void ivoryevent$getHitAbility(Entity target, CallbackInfo ci) {
+        PlayerEntity player = (PlayerEntity) (Object) this;
+
+        if (!IvoryEventManager.isIvory(player)) {
+            if (target instanceof LivingEntity living) {
+                if (player.getOffHandStack().getItem() instanceof AHGemItem && !(player.getMainHandStack().getItem() instanceof AHGemItem)) {
+                    if (player.getOffHandStack().isOf(OccidereItems.HERETIC)) {
+                        IvoryEventManager.heretic$getHitAbility(player, living, player.getOffHandStack(), player.getWorld());
+                    }
+
+                    if (player.getOffHandStack().isOf(OccidereItems.AURATUS)) {
+                        IvoryEventManager.auratus$getHitAbility(player, living, player.getOffHandStack(), player.getWorld());
+                    }
+
+                    IvoryEventManager.ivoryEvent$commonHitAbility(player, living, player.getOffHandStack(), player.getWorld());
+                }
+            }
+        }
+    }
+
 }

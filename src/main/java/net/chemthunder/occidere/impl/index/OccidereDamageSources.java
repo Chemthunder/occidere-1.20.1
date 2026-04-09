@@ -44,6 +44,11 @@ public interface OccidereDamageSources {
         return entity.getDamageSources().create(GUNSHOT);
     }
 
+    RegistryKey<DamageType> LIFESTEAL = of("lifesteal");
+    static DamageSource lifesteal(Entity entity) {
+        return entity.getDamageSources().create(LIFESTEAL);
+    }
+
     private static RegistryKey<DamageType> of(String name) {
         RegistryKey<DamageType> key = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Occidere.id(name));
         SOURCE_MAP.put(key, name);

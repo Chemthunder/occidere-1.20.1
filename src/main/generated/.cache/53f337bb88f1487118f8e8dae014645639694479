@@ -1,5 +1,5 @@
-// 1.20.1	2026-04-07T17:10:06.4415911	Occidere/Tags for minecraft:damage_type
+// 1.20.1	2026-04-08T20:01:19.3483396	Occidere/Tags for minecraft:damage_type
 725356f57eef9d58afff783133b51455c054b4ed data\minecraft\tags\damage_type\bypasses_cooldown.json
 897a22697400c684ce7932c31ce0d97264a7faf7 data\minecraft\tags\damage_type\bypasses_invulnerability.json
 897a22697400c684ce7932c31ce0d97264a7faf7 data\minecraft\tags\damage_type\bypasses_effects.json
-897a22697400c684ce7932c31ce0d97264a7faf7 data\minecraft\tags\damage_type\bypasses_armor.json
+dc1cd9fc4c8025df5dfc9a11b7986f9a1d9b5694 data\minecraft\tags\damage_type\bypasses_armor.json

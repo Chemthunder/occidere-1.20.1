@@ -1,6 +1,7 @@
 package net.chemthunder.occidere.impl.index;
 
 import net.chemthunder.occidere.impl.Occidere;
+import net.chemthunder.occidere.impl.client.render.model.HereticSawModel;
 import net.chemthunder.occidere.impl.client.render.model.WovenAdmirationModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
@@ -13,6 +14,7 @@ public interface OccidereEntityModelLayers {
     Map<EntityModelLayer, EntityModelLayerRegistry.TexturedModelDataProvider> MODEL_LAYERS = new LinkedHashMap<>();
 
     EntityModelLayer WOVEN_ADMIRATION = createModelLayer("woven_admiration", WovenAdmirationModel::getTexturedModelData);
+    EntityModelLayer HERETIC_SAW = createModelLayer("heretic_saw", HereticSawModel::getTexturedModelData);
 
     private static EntityModelLayer createModelLayer(String name, EntityModelLayerRegistry.TexturedModelDataProvider provider) {
         EntityModelLayer entityModelLayer = createMain(name);

@@ -1,0 +1,6 @@
+{
+  "parent": "occidere:item/template/auratus_heretic_blocking",
+  "textures": {
+    "layer0": "occidere:item/auratus_heretic_tainted_handheld"
+  }
+}

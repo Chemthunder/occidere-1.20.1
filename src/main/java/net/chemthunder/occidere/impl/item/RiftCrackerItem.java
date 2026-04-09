@@ -30,7 +30,6 @@ public class RiftCrackerItem extends MiscItem implements IgnoredByRegisterLangIt
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         RiftCrackerItemComponent component = RiftCrackerItemComponent.KEY.get(user.getStackInHand(hand));
 
-
         if (user.isSneaking()) {
             component.setX(Math.round(user.getX()));
             component.setY(Math.round(user.getY()));

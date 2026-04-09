@@ -4,6 +4,10 @@
     {
       "id": "occidere:fateweaver",
       "required": false
+    },
+    {
+      "id": "occidere:bone_shard",
+      "required": false
     }
   ]
 }
